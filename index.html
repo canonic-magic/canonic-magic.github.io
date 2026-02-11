@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAGIC — Governed Intelligence</title>
+    <meta name="description" content="Coin = Work. Distribute work. Govern value. Build the galaxy.">
+    <link rel="stylesheet" href="./DESIGN.css">
+    <style>
+        :root { --accent: #00ff88; }
+
+        /* ═══ LIGHT/DARK THEME ═══ */
+        [data-theme="light"] {
+            --bg: #ffffff;
+            --fg: #1a1a2e;
+            --fg-secondary: #64748b;
+            --card: #f8fafc;
+            --border: rgba(0,0,0,0.08);
+        }
+        [data-theme="dark"] {
+            --bg: #000;
+            --fg: #f5f5f7;
+            --fg-secondary: #86868b;
+            --card: rgba(255,255,255,0.04);
+            --border: rgba(255,255,255,0.08);
+        }
+        @media (prefers-color-scheme: light) {
+            :root:not([data-theme="dark"]) {
+                --bg: #ffffff;
+                --fg: #1a1a2e;
+                --fg-secondary: #64748b;
+                --card: #f8fafc;
+                --border: rgba(0,0,0,0.08);
+            }
+        }
+
+        /* ═══ ECO BAR ═══ */
+        .eco-bar { position: fixed; top: 0; left: 0; right: 0; background: rgba(0,0,0,0.95); z-index: 1001; border-bottom: 1px solid rgba(255,255,255,0.06); padding: 8px 24px; display: flex; justify-content: space-between; align-items: center; }
+        .eco-brand { font-size: 12px; font-weight: 700; color: #00ff88; text-decoration: none; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px; }
+        .eco-mark { display: inline-block; font-size: 14px; }
+        .eco-links { display: flex; gap: 20px; font-size: 11px; align-items: center; }
+        .eco-links a { color: #666; text-decoration: none; transition: color 0.2s; }
+        .eco-links a:hover { color: #00ff88; }
+        .eco-links a.eco-active { color: #fff; }
+        .theme-toggle { background: none; border: 1px solid #333; color: #888; font-size: 12px; padding: 2px 8px; border-radius: 4px; cursor: pointer; margin-left: 8px; transition: all 0.2s; }
+        .theme-toggle:hover { border-color: #00ff88; color: #00ff88; }
+
+        /* Hero — padding for eco-bar */
+        .hero { padding-top: 80px; }
+
+        /* ═══ AXIOM BLOCK ═══ */
+        .axiom-block { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; margin-bottom: 20px; }
+        .axiom-block h3 { color: var(--accent); font-size: 20px; margin-bottom: 12px; }
+        .axiom-block p { color: var(--fg-secondary); font-size: 14px; line-height: 1.7; }
+
+        /* Flow diagram */
+        .flow { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; padding: 24px 0; }
+        .flow-node { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 22px; font-weight: 600; font-size: 14px; }
+        .flow-node.accent { border-color: var(--accent); color: var(--accent); }
+        .flow-arrow { color: var(--accent); font-size: 18px; }
+
+        /* ═══ PRIMITIVES ═══ */
+        .prim { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px; transition: border-color 0.2s; }
+        .prim:hover { border-color: var(--accent); }
+        .prim h3 { font-size: 18px; margin-bottom: 4px; }
+        .prim-svc { font-family: var(--mono); font-size: 12px; color: var(--accent); margin-bottom: 12px; }
+        .prim p { font-size: 13px; color: var(--fg-secondary); line-height: 1.6; }
+        .prim-tags { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+        .prim-tag { padding: 4px 10px; background: rgba(0,255,136,0.08); border: 1px solid rgba(0,255,136,0.2); border-radius: 6px; font-size: 11px; font-weight: 600; color: var(--accent); }
+
+        /* ═══ COMPOSITIONS TABLE ═══ */
+        .comp-table { width: 100%; border-collapse: collapse; margin-top: 24px; }
+        .comp-table th { text-align: left; padding: 12px 16px; font-size: 12px; color: var(--fg-secondary); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }
+        .comp-table td { padding: 14px 16px; font-size: 14px; border-bottom: 1px solid var(--border); }
+        .comp-table td:first-child { font-weight: 600; }
+        .comp-table .formula { font-family: var(--mono); color: var(--accent); font-size: 13px; }
+        .comp-table .desc { color: var(--fg-secondary); }
+
+        /* ═══ GALAXY ═══ */
+        .galaxy { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 48px; text-align: center; position: relative; overflow: hidden; }
+        .galaxy::before { content: ''; position: absolute; top: 50%; left: 50%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(0,255,136,0.12) 0%, transparent 70%); transform: translate(-50%, -50%); border-radius: 50%; }
+        .galaxy h3 { position: relative; font-size: 24px; margin-bottom: 8px; color: var(--accent); }
+        .galaxy p { position: relative; color: var(--fg-secondary); font-size: 14px; line-height: 1.7; max-width: 600px; margin: 0 auto; }
+        .galaxy-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 24px; position: relative; }
+        .galaxy-val { font-family: var(--mono); font-size: 24px; font-weight: 700; color: var(--accent); }
+        .galaxy-lbl { font-size: 11px; color: var(--fg-secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px; }
+
+        /* ═══ HOW IT WORKS ═══ */
+        .how-card { text-align: center; padding: 24px; }
+        .how-icon { font-size: 32px; margin-bottom: 12px; }
+        .how-card h4 { margin-bottom: 8px; }
+        .how-card p { font-size: 13px; color: var(--fg-secondary); line-height: 1.6; }
+
+        /* ═══ AXIOM QUOTE ═══ */
+        .axiom-quote { text-align: center; padding: 48px 24px; font-size: 15px; color: var(--fg-secondary); font-style: italic; max-width: 700px; margin: 0 auto; }
+        .axiom-quote strong { color: var(--fg); font-style: normal; }
+
+        /* ═══ TIERS ═══ */
+        .tier { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 32px; text-align: center; transition: all 0.2s; }
+        .tier:hover { border-color: var(--accent); transform: translateY(-4px); }
+        .tier.featured { border: 2px solid var(--accent); position: relative; }
+        .tier.featured::after { content: 'POPULAR'; position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #000; padding: 3px 14px; border-radius: 20px; font-size: 10px; font-weight: 700; letter-spacing: 0.05em; }
+        .tier-name { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+        .tier-price { font-size: 36px; font-weight: 700; color: var(--accent); margin: 16px 0 4px; line-height: 1; }
+        .tier-price-sub { font-size: 13px; color: var(--fg-secondary); margin-bottom: 20px; }
+        .tier-list { list-style: none; text-align: left; margin-bottom: 24px; }
+        .tier-list li { padding: 8px 0; font-size: 13px; color: var(--fg-secondary); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; }
+        .tier-list li::before { content: '\2713'; color: var(--accent); font-weight: 700; font-size: 12px; }
+        .tier-list li:last-child { border: none; }
+        .tier-cta { display: inline-block; padding: 12px 28px; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+        .tier-cta:hover { transform: translateY(-2px); }
+        .tier-cta-primary { background: var(--accent); color: #000; }
+        .tier-cta-secondary { background: var(--card); border: 1px solid var(--border); color: var(--fg); }
+        .tier-axiom { text-align: center; padding: 32px 24px; font-size: 15px; color: var(--fg-secondary); font-style: italic; }
+        .tier-axiom strong { color: var(--fg); font-style: normal; }
+
+        /* ═══ CTA ═══ */
+        .cta { background: linear-gradient(135deg, rgba(0,255,136,0.08), rgba(0,0,0,0.3)); border: 1px solid rgba(0,255,136,0.2); text-align: center; border-radius: 16px; padding: 48px; }
+        [data-theme="light"] .cta { background: linear-gradient(135deg, rgba(0,255,136,0.06), rgba(0,0,0,0.02)); }
+        .cta h3 { font-size: 28px; margin-bottom: 12px; color: var(--accent); }
+        .cta p { color: var(--fg-secondary); margin-bottom: 24px; }
+        .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+        /* Floating SPA index */
+        .spa-index { position: fixed; right: 20px; top: 50%; transform: translateY(-50%); z-index: 999; display: flex; flex-direction: column; gap: 16px; align-items: flex-end; }
+        .spa-dot { display: flex; align-items: center; gap: 10px; text-decoration: none; cursor: pointer; }
+        .spa-dot-label { font-size: 11px; font-weight: 600; color: var(--fg-secondary); opacity: 0; transform: translateX(8px); transition: all 0.2s; white-space: nowrap; letter-spacing: 0.03em; }
+        .spa-dot:hover .spa-dot-label { opacity: 1; transform: translateX(0); }
+        .spa-dot-pip { width: 8px; height: 8px; border-radius: 50%; background: var(--fg-secondary); opacity: 0.3; transition: all 0.2s; flex-shrink: 0; }
+        .spa-dot:hover .spa-dot-pip { opacity: 0.7; }
+        .spa-dot.active .spa-dot-pip { opacity: 1; background: var(--accent); width: 10px; height: 10px; }
+        .spa-dot.active .spa-dot-label { opacity: 1; transform: translateX(0); color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .galaxy-stats { grid-template-columns: repeat(2, 1fr); }
+            .spa-index { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="eco-bar">
+        <a href="/FOUNDATION/" class="eco-brand"><span class="eco-mark">&#8745;</span> CANONIC</a>
+        <div class="eco-links">
+            <a href="/FOUNDATION/">Foundation</a>
+            <a href="/MAGIC/" class="eco-active">MAGIC</a>
+            <a href="/SITE/">Hadley Lab</a>
+            <a href="/TALK/">TALK</a>
+            <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn" title="Toggle light/dark">&#9790;</button>
+        </div>
+    </div>
+
+    <nav class="spa-index">
+        <a href="#primitives" class="spa-dot" data-section="primitives"><span class="spa-dot-label">Primitives</span><span class="spa-dot-pip"></span></a>
+        <a href="#compositions" class="spa-dot" data-section="compositions"><span class="spa-dot-label">Services</span><span class="spa-dot-pip"></span></a>
+        <a href="#galaxy" class="spa-dot" data-section="galaxy"><span class="spa-dot-label">Galaxy</span><span class="spa-dot-pip"></span></a>
+        <a href="#tiers" class="spa-dot" data-section="tiers"><span class="spa-dot-label">Plans</span><span class="spa-dot-pip"></span></a>
+        <a href="#how" class="spa-dot" data-section="how"><span class="spa-dot-label">How</span><span class="spa-dot-pip"></span></a>
+        <a href="#communities" class="spa-dot" data-section="communities"><span class="spa-dot-label">Communities</span><span class="spa-dot-pip"></span></a>
+    </nav>
+
+    <div class="container">
+
+        <div class="hero">
+            <h1 class="gradient-text">MAGIC</h1>
+            <p class="subtitle">Distribute work. Govern value.</p>
+            <p class="description">Three primitives. Infinite services. One governed economy. MAGIC is the operations layer — the platform that turns compliance into commerce and work into value.</p>
+        </div>
+
+        <!-- Core Axiom -->
+        <div class="axiom-block">
+            <h3>Coin = Work</h3>
+            <p>In the CANONIC economy, every coin is backed by validated work. Not speculation. Not sentiment. Work. You contribute, the system validates, you earn. Value flows from what you build, not what you trade.</p>
+            <div class="flow">
+                <div class="flow-node">Work</div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-node">Validate</div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-node accent">Coin</div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-node">Distribute</div>
+                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-node">Commerce</div>
+            </div>
+        </div>
+
+        <div class="axiom-quote">
+            <strong>Distributed work is the product.</strong> Every organization contributes. Every contribution is validated. Every validation earns. The galaxy grows one unit of work at a time.
+        </div>
+
+        <!-- Three Primitives -->
+        <section id="primitives">
+            <h2>Three Primitives</h2>
+            <p class="description">Every service in the galaxy composes from three building blocks. Together they form an autonomous agent.</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 24px;">
+                <div class="prim">
+                    <h3>🧠 INTEL</h3>
+                    <div class="prim-svc">Knowledge</div>
+                    <p>What you know. The intelligence layer that reads, validates, and learns. Every service has it — it's universal.</p>
+                    <div class="prim-tags">
+                        <span class="prim-tag">Learning</span>
+                        <span class="prim-tag">Validation</span>
+                        <span class="prim-tag">Evolution</span>
+                    </div>
+                </div>
+                <div class="prim">
+                    <h3>💬 CHAT</h3>
+                    <div class="prim-svc">Communication</div>
+                    <p>What you say. Domain-specific interfaces grounded in evidence. Healthcare, legal, finance — each speaks its own language.</p>
+                    <div class="prim-tags">
+                        <span class="prim-tag">MammoChat</span>
+                        <span class="prim-tag">MedChat</span>
+                        <span class="prim-tag">OncoChat</span>
+                        <span class="prim-tag">LawChat</span>
+                    </div>
+                </div>
+                <div class="prim">
+                    <h3>💰 COIN</h3>
+                    <div class="prim-svc">Commerce</div>
+                    <p>What you earn. The value layer. Every unit of work validated and compensated. Coin equals work. No speculation.</p>
+                    <div class="prim-tags">
+                        <span class="prim-tag">Wallet</span>
+                        <span class="prim-tag">Ledger</span>
+                        <span class="prim-tag">Credit</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section id="compositions">
+            <h2>The Services</h2>
+            <p class="description">Primitives compose into services. Each combination unlocks new capabilities.</p>
+            <table class="comp-table">
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Built From</th>
+                        <th>What It Does</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>💬 TALK</td>
+                        <td class="formula">Chat + Intel</td>
+                        <td class="desc">Intelligent conversation grounded in knowledge</td>
+                    </tr>
+                    <tr>
+                        <td>🔒 VAULT</td>
+                        <td class="formula">Coin + Intel</td>
+                        <td class="desc">Secure storage with governed access</td>
+                    </tr>
+                    <tr>
+                        <td>🛒 SHOP</td>
+                        <td class="formula">Coin + Intel + Chat</td>
+                        <td class="desc">Commerce with intelligence and interface</td>
+                    </tr>
+                    <tr>
+                        <td>🤖 AGENT</td>
+                        <td class="formula">Intel + Chat + Coin</td>
+                        <td class="desc">All three primitives. Full autonomy.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Galaxy -->
+        <section id="galaxy">
+            <div class="galaxy">
+                <h3>The Galaxy</h3>
+                <p>Every organization joins the galaxy. Every contribution is validated. Tokenized GPU compute. Clinical services. Crowdsourced knowledge. Any backend, any frontend — all governed by the same protocol. The galaxy grows one unit of work at a time.</p>
+                <div class="galaxy-stats">
+                    <div>
+                        <div class="galaxy-val">19</div>
+                        <div class="galaxy-lbl">Organizations</div>
+                    </div>
+                    <div>
+                        <div class="galaxy-val">185+</div>
+                        <div class="galaxy-lbl">Projects</div>
+                    </div>
+                    <div>
+                        <div class="galaxy-val">70+</div>
+                        <div class="galaxy-lbl">Standards</div>
+                    </div>
+                    <div>
+                        <div class="galaxy-val">∞</div>
+                        <div class="galaxy-lbl">Services</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tiers -->
+        <section id="tiers">
+            <h2>Choose Your Tier</h2>
+            <p class="description">Start free. Scale when you're ready. Every tier earns through work.</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 32px;">
+                <div class="tier">
+                    <div class="tier-name">Community</div>
+                    <div class="tier-price">Free</div>
+                    <div class="tier-price-sub">Forever</div>
+                    <ul class="tier-list">
+                        <li>Full platform access</li>
+                        <li>Learning communities</li>
+                        <li>Earn through work</li>
+                        <li>Open governance</li>
+                    </ul>
+                    <a href="/TALK/" class="tier-cta tier-cta-secondary">Get Started</a>
+                </div>
+                <div class="tier featured">
+                    <div class="tier-name">Business</div>
+                    <div class="tier-price">$100</div>
+                    <div class="tier-price-sub">per year</div>
+                    <ul class="tier-list">
+                        <li>Private workspace</li>
+                        <li>Listed in the marketplace</li>
+                        <li>Automated compliance</li>
+                        <li>Commercial licensing</li>
+                        <li>5% platform fee</li>
+                    </ul>
+                    <a href="/SITE/DEAL/" class="tier-cta tier-cta-primary">Subscribe</a>
+                </div>
+                <div class="tier">
+                    <div class="tier-name">Enterprise</div>
+                    <div class="tier-price">Contract</div>
+                    <div class="tier-price-sub">Tailored governance</div>
+                    <ul class="tier-list">
+                        <li>Dedicated validation</li>
+                        <li>Foundation-certified</li>
+                        <li>Custom compliance</li>
+                        <li>Full treasury access</li>
+                        <li>10% platform fee</li>
+                    </ul>
+                    <a href="/SITE/DEAL/" class="tier-cta tier-cta-secondary">Contact</a>
+                </div>
+                <div class="tier">
+                    <div class="tier-name">Foundation</div>
+                    <div class="tier-price">Free</div>
+                    <div class="tier-price-sub">Nonprofits</div>
+                    <ul class="tier-list">
+                        <li>Enterprise-grade tools</li>
+                        <li>Full governance</li>
+                        <li>Open infrastructure</li>
+                        <li>No cost. Ever.</li>
+                    </ul>
+                    <a href="/TALK/MEDCHAT/" class="tier-cta tier-cta-secondary">Apply</a>
+                </div>
+            </div>
+            <div class="tier-axiom"><strong>Nonprofits get enterprise for free.</strong> That's not charity. That's architecture.</div>
+        </section>
+
+        <!-- How It Works -->
+        <section id="how">
+            <h2>How It Works</h2>
+            <p class="description">Four steps. Zero to governed commerce.</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 24px;">
+                <div class="how-card">
+                    <div class="how-icon">🏢</div>
+                    <h4>Join</h4>
+                    <p>Bring your organization. MAGIC maps every project, every team, every asset into one governed workspace.</p>
+                </div>
+                <div class="how-card">
+                    <div class="how-icon">🧭</div>
+                    <h4>Validate</h4>
+                    <p>Eight questions. Seventy standards. MAGIC scores your work against real compliance frameworks — automatically.</p>
+                </div>
+                <div class="how-card">
+                    <div class="how-icon">🎯</div>
+                    <h4>Comply</h4>
+                    <p>Your compliance score grows with every contribution. Full compliance unlocks full commerce. The galaxy rewards real work.</p>
+                </div>
+                <div class="how-card">
+                    <div class="how-icon">💰</div>
+                    <h4>Earn</h4>
+                    <p>Coin equals work. Every validated contribution earns. Distribute compute. Crowdsource knowledge. Build together. Get paid.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Communities -->
+        <section id="communities">
+            <h2>Learning Communities</h2>
+            <p class="description">MAGIC communities learn together, build together, earn together. Every community is governed. Every contribution counts.</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 24px;">
+                <div class="prim">
+                    <h3>🧬 Healthcare</h3>
+                    <div class="prim-svc">Clinical AI</div>
+                    <p>Radiologists training models. Oncologists validating protocols. Clinicians building the future of medicine — together.</p>
+                    <div class="prim-tags">
+                        <span class="prim-tag">MammoChat</span>
+                        <span class="prim-tag">OncoChat</span>
+                        <span class="prim-tag">Genomics</span>
+                    </div>
+                </div>
+                <div class="prim">
+                    <h3>⚡ Compute</h3>
+                    <div class="prim-svc">Tokenized GPU</div>
+                    <p>Contribute compute. Train models. Run inference. Every GPU cycle is validated work. Every cycle earns.</p>
+                    <div class="prim-tags">
+                        <span class="prim-tag">GPU Pools</span>
+                        <span class="prim-tag">Inference</span>
+                        <span class="prim-tag">Training</span>
+                    </div>
+                </div>
+                <div class="prim">
+                    <h3>📚 Knowledge</h3>
+                    <div class="prim-svc">Crowdsourced Intelligence</div>
+                    <p>Experts annotating data. Teams curating knowledge. Communities teaching machines — and each other.</p>
+                    <div class="prim-tags">
+                        <span class="prim-tag">Annotation</span>
+                        <span class="prim-tag">Curation</span>
+                        <span class="prim-tag">Research</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Marketplace -->
+        <section>
+            <h2>The Marketplace</h2>
+            <p class="description">Every governed application, discoverable in one place. Built by communities. Validated by the protocol.</p>
+            <table class="comp-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Applications</th>
+                        <th>Access</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>🔧 Platform</td>
+                        <td class="desc">Agent, Knowledge, Evolution</td>
+                        <td class="formula">Free</td>
+                    </tr>
+                    <tr>
+                        <td>💼 Productivity</td>
+                        <td class="desc">Email, Calendar, Social, Analytics</td>
+                        <td class="formula">Business</td>
+                    </tr>
+                    <tr>
+                        <td>🏥 Specialist</td>
+                        <td class="desc">MammoChat, PsychChat, Genomics, InvestorChat</td>
+                        <td class="formula">Enterprise</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- CTA -->
+        <section>
+            <div class="cta">
+                <h3>Build the Future</h3>
+                <p>Join the galaxy. Distribute work. Earn through contribution. It's MAGIC.</p>
+                <div class="cta-buttons">
+                    <a href="/TALK/" class="btn">Start for Free</a>
+                    <a href="#tiers" class="btn btn-secondary">View Plans</a>
+                    <a href="#communities" class="btn btn-secondary">Explore Communities</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <a href="/FOUNDATION/">Foundation</a> · <a href="/MAGIC/">MAGIC</a> · <a href="/SITE/">Hadley Lab</a> · <a href="/TALK/">TALK</a>
+            <br><br>MAGIC | Distribute Work. Govern Value. | CANONIC
+        </footer>
+    </div>
+
+    <script>
+        function getTheme() {
+            return localStorage.getItem('canonic-theme') || 'auto';
+        }
+        function applyTheme(t) {
+            if (t === 'auto') {
+                document.documentElement.removeAttribute('data-theme');
+            } else {
+                document.documentElement.setAttribute('data-theme', t);
+            }
+            var btn = document.getElementById('theme-btn');
+            btn.textContent = t === 'light' ? '\u2600' : t === 'dark' ? '\u263E' : '\u25D0';
+            btn.title = t === 'auto' ? 'Theme: Auto' : t === 'light' ? 'Theme: Light' : 'Theme: Dark';
+        }
+        function toggleTheme() {
+            var order = ['auto', 'light', 'dark'];
+            var cur = getTheme();
+            var next = order[(order.indexOf(cur) + 1) % 3];
+            localStorage.setItem('canonic-theme', next);
+            applyTheme(next);
+        }
+        applyTheme(getTheme());
+
+        // SPA index scroll tracking
+        var dots = document.querySelectorAll('.spa-dot');
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    dots.forEach(function(d) { d.classList.remove('active'); });
+                    var dot = document.querySelector('.spa-dot[data-section="' + entry.target.id + '"]');
+                    if (dot) dot.classList.add('active');
+                }
+            });
+        }, { rootMargin: '-40% 0px -40% 0px' });
+        document.querySelectorAll('section[id]').forEach(function(s) { observer.observe(s); });
+    </script>
+</body>
+</html>
