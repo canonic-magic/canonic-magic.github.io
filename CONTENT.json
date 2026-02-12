@@ -8,9 +8,9 @@
     ]
   },
   "nav": [
-    { "label": "How It Works", "href": "#primitives" },
-    { "label": "Services", "href": "#compositions" },
     { "label": "Galaxy", "href": "#galaxy" },
+    { "label": "Primitives", "href": "#primitives" },
+    { "label": "Services", "href": "#compositions" },
     { "label": "Pricing", "href": "#tiers" }
   ],
   "hero": {
@@ -49,10 +49,33 @@
       }
     },
     {
+      "id": "galaxy",
+      "title": "The Galaxy",
+      "eyebrow": "THE PROOF",
+      "description": "Every node is a governed project. Every edge is an inheritance chain. Every color is a category. 19 organizations. 185+ projects. 70+ compliance standards. This is what governed work looks like.",
+      "galaxy": {
+        "height": "70vh",
+        "hud": true,
+        "search": true,
+        "dock": true
+      }
+    },
+    {
+      "id": "galaxy-stats",
+      "wrapClass": "galaxy",
+      "galaxyStats": [
+        { "value": "19", "label": "Organizations" },
+        { "value": "185+", "label": "Projects" },
+        { "value": "70+", "label": "Standards" },
+        { "value": "\u221e", "label": "Services" }
+      ],
+      "cta": { "label": "Full Screen Galaxy \u2192", "href": "./MAGIC.html" }
+    },
+    {
       "id": "primitives",
       "title": "Three Primitives. One Standard.",
-      "eyebrow": "THE BUILDING BLOCKS",
-      "description": "Every service in the galaxy composes from three building blocks. Together they form an autonomous agent. This is the entire system.",
+      "eyebrow": "THE REASON",
+      "description": "Every node you just saw composes from three building blocks. Together they form an autonomous agent. This is the entire system.",
       "cards": [
         {
           "class": "primitive-card",
@@ -114,29 +137,6 @@
           ["\ud83e\udd16 AGENT", "INTEL + CHAT + COIN", "All three primitives. Full autonomy."]
         ]
       }
-    },
-    {
-      "id": "galaxy",
-      "title": "The Galaxy",
-      "eyebrow": "SEE THE PROOF",
-      "description": "Every node is a governed project. Every edge is an inheritance chain. Every color is a category. This is the CANONIC ecosystem \u2014 19 organizations, 185+ projects, all validated against 70+ compliance standards.",
-      "galaxy": {
-        "height": "70vh",
-        "hud": true,
-        "search": true,
-        "dock": true
-      }
-    },
-    {
-      "id": "galaxy-stats",
-      "wrapClass": "galaxy",
-      "galaxyStats": [
-        { "value": "19", "label": "Organizations" },
-        { "value": "185+", "label": "Projects" },
-        { "value": "70+", "label": "Standards" },
-        { "value": "\u221e", "label": "Services" }
-      ],
-      "cta": { "label": "Full Screen Galaxy \u2192", "href": "./MAGIC.html" }
     },
     {
       "id": "how",
