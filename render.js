@@ -194,6 +194,12 @@ var RENDER = (function () {
                 html += '</div>';
             }
 
+            // Section CTA (inline button)
+            if (sec.cta) {
+                var onclick = sec.cta.talk ? ' onclick="TALK.open();return false"' : '';
+                html += '<div style="text-align:center;margin-top:32px;"><a href="' + (sec.cta.href || '#') + '" class="btn"' + onclick + '>' + sec.cta.label + '</a></div>';
+            }
+
             // Axiom quote
             if (sec.quote) {
                 html += '<div style="text-align:center;padding:48px 24px;font-size:15px;color:var(--fg-secondary);font-style:italic;max-width:700px;margin:0 auto;">';
