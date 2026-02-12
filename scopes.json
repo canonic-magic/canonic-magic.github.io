@@ -5,6 +5,8 @@
 ,
   { "id": "SECTORS", "label": "SECTORS", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-foundation", "inherits": "FOUNDATION" }
 ,
+  { "id": "LEARNING", "label": "LEARNING", "bits": 128, "size": 60, "color": "#64748b", "category": "ORG", "repo": "canonic-foundation", "inherits": "SECTORS" }
+,
   { "id": "SHOP", "label": "SHOP", "bits": 255, "size": 80, "color": "#ff9f0a", "category": "COMMERCE", "repo": "canonic-foundation", "inherits": "FOUNDATION" }
 ,
   { "id": "LANGUAGE", "label": "LANGUAGE", "bits": 255, "size": 80, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "canonic-foundation", "inherits": "FOUNDATION" }
@@ -47,9 +49,13 @@
 ,
   { "id": "MAGIC", "label": "MAGIC", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-magic", "inherits": "MAGIC-ROOT" }
 ,
+  { "id": "LEARNING", "label": "LEARNING", "bits": 128, "size": 60, "color": "#64748b", "category": "ORG", "repo": "canonic-magic", "inherits": "MAGIC-ROOT" }
+,
   { "id": "ORGS", "label": "ORGS", "bits": 255, "size": 80, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-magic", "inherits": "MAGIC-ROOT" }
 ,
   { "id": "VAULT", "label": "VAULT", "bits": 255, "size": 80, "color": "#ff9f0a", "category": "COMMERCE", "repo": "canonic-magic", "inherits": "MAGIC-ROOT" }
+,
+  { "id": "LEARNING", "label": "LEARNING", "bits": 128, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "HADLEYLAB-ROOT" }
 ,
   { "id": "DEXTER", "label": "DEXTER", "bits": 255, "size": 80, "color": "#ec4899", "category": "SERVICES", "repo": "hadleylab-canonic", "inherits": "HADLEYLAB-ROOT" }
 
