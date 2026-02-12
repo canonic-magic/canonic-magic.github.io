@@ -246,10 +246,10 @@ img { max-width: 100%; display: block; }
 
 .theme-toggle:hover { border-color: var(--green); color: var(--green); }
 
-/* Nav — frosted glass (offset for eco-bar + talk-bar) */
+/* Nav — frosted glass (offset for eco-bar) */
 nav {
     position: fixed;
-    top: 69px;
+    top: 33px;
     left: 0;
     right: 0;
     background: rgba(10, 10, 15, 0.9);
@@ -1131,6 +1131,22 @@ select {
     color: var(--fg);
 }
 
+[data-theme="light"] .eco-bar {
+    background: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .eco-links a { color: #64748b; }
+[data-theme="light"] .eco-links a:hover { color: var(--accent); }
+[data-theme="light"] .eco-links a.eco-active { color: #1a1a2e; }
+[data-theme="light"] .theme-toggle { border-color: #ccc; color: #64748b; }
+[data-theme="light"] .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+[data-theme="light"] section {
+    background: var(--bg);
+    box-shadow: var(--shadow);
+}
+
 /* System dark mode — auto-apply if no explicit theme */
 @media (prefers-color-scheme: light) {
     :root:not([data-theme="dark"]) {
@@ -1149,6 +1165,18 @@ select {
     :root:not([data-theme="dark"]) .stat,
     :root:not([data-theme="dark"]) .app-card,
     :root:not([data-theme="dark"]) .card {
+        background: var(--bg);
+        box-shadow: var(--shadow);
+    }
+    :root:not([data-theme="dark"]) .eco-bar {
+        background: #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+    :root:not([data-theme="dark"]) .eco-links a { color: #64748b; }
+    :root:not([data-theme="dark"]) .eco-links a:hover { color: var(--accent); }
+    :root:not([data-theme="dark"]) .eco-links a.eco-active { color: #1a1a2e; }
+    :root:not([data-theme="dark"]) .theme-toggle { border-color: #ccc; color: #64748b; }
+    :root:not([data-theme="dark"]) section {
         background: var(--bg);
         box-shadow: var(--shadow);
     }
