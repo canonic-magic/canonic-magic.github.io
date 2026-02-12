@@ -95,7 +95,7 @@
           "title": "CHAT",
           "titleColor": "#ec4899",
           "subtitle": "What you SAY",
-          "text": "Domain-specific interfaces grounded in evidence. Healthcare, legal, finance \u2014 each speaks its own language. TALK is the service. Sector is the only variable. Same architecture, different vocabulary.",
+          "text": "Domain-specific interfaces grounded in evidence. Healthcare, legal, finance \u2014 each speaks its own language. TALK is the service. Industry is the only variable. Same architecture, different vocabulary.",
           "badge": { "label": "Services", "color": "#ec4899" },
           "cta": { "label": "Try TALK", "href": "#", "class": "btn-pink", "talk": true }
         },
@@ -114,7 +114,7 @@
       "banner": {
         "eyebrow": "CANONIC GOVERNANCE",
         "title": "255 = Full Compliance = MAGIC",
-        "text": "Eight governance dimensions. Each a 1-bit validation. Declaration, Evidence, Temporal, Relational, Operational, Structural, Learning, Language. When all eight are satisfied, your project reaches full compliance. That\u2019s MAGIC.",
+        "text": "Eight compliance checks. Score 0\u2013255. When all pass, your project reaches full compliance. That\u2019s MAGIC.",
         "badges": [
           { "label": "INTEL", "color": "#bf5af2" },
           { "label": "CHAT", "color": "#ec4899" },
@@ -126,7 +126,7 @@
       "id": "compositions",
       "title": "Services Compose Primitives",
       "eyebrow": "HOW SERVICES WORK",
-      "description": "Primitives combine into services. Each combination unlocks new capabilities. Sector is the only variable \u2014 the architecture stays the same.",
+      "description": "Primitives combine into services. Each combination unlocks new capabilities. Industry is the only variable \u2014 the architecture stays the same.",
       "table": {
         "headers": ["Service", "Built From", "What It Does"],
         "cellClasses": [null, "formula", "desc"],
