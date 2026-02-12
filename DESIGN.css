@@ -14,7 +14,7 @@
  * Fleet:
  *   canonic-foundation.github.io    --accent: #7c3aed (purple)
  *   canonic-magic.github.io         --accent: #00ff88 (green)
- *   hadleylab-dexter.github.io      --accent: #3b82f6 (blue)
+ *   hadleylab-dexter.github.io      --accent: #60a5fa (baby blue)
  *
  * Layer 0: Tokens
  * Layer 1: Reset + Base
@@ -244,10 +244,10 @@ img { max-width: 100%; display: block; }
 
 .theme-toggle:hover { border-color: var(--green); color: var(--green); }
 
-/* Nav — frosted glass */
+/* Nav — frosted glass (offset for eco-bar + talk-bar) */
 nav {
     position: fixed;
-    top: 33px;
+    top: 69px;
     left: 0;
     right: 0;
     background: rgba(10, 10, 15, 0.9);
@@ -295,9 +295,9 @@ nav {
     padding: 0 24px;
 }
 
-/* Hero */
+/* Hero (offset for eco-bar + talk-bar + nav) */
 .hero {
-    padding: 140px 24px 80px;
+    padding: 176px 24px 80px;
     text-align: center;
 }
 
@@ -1096,6 +1096,219 @@ select {
 [data-scope="patents"]    { --accent: #f59e0b; }
 [data-scope="deal"]       { --accent: #10b981; }
 [data-scope="investor"]   { --accent: #d4af37; }
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   LAYER 10 — TALK (Fleet-wide Chat Primitive)
+   ═══════════════════════════════════════════════════════════════════
+
+   TALK = CHAT + INTEL
+   The universal conversation service. Every frontend gets it.
+   Abstracted to AXIOMS in the GALAXY.
+
+   HTML contract:
+   <div class="talk-bar" id="talkBar">
+       <div class="talk-dot"></div>
+       <span class="talk-scope">SCOPE</span>
+       <input class="talk-input" id="talkInput">
+       <button class="talk-btn">TALK</button>
+   </div>
+
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Talk Bar — fixed below eco-bar */
+.talk-bar {
+    position: fixed;
+    top: 33px;
+    left: 0;
+    right: 0;
+    height: 36px;
+    background: rgba(10, 10, 15, 0.95);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 24px;
+}
+
+.talk-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--green);
+    border-radius: 50%;
+    animation: talk-pulse 2s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+@keyframes talk-pulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.4); }
+    50% { opacity: 0.7; box-shadow: 0 0 0 4px rgba(0, 255, 136, 0); }
+}
+
+.talk-scope {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--fg-secondary);
+    flex-shrink: 0;
+    font-family: var(--mono);
+}
+
+.talk-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--fg);
+    font-size: 13px;
+    font-family: var(--font);
+    outline: none;
+    padding: 0;
+    width: 0;
+    min-width: 0;
+}
+
+.talk-input::placeholder {
+    color: var(--fg-secondary);
+    opacity: 0.5;
+}
+
+.talk-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--fg-secondary);
+    padding: 4px 14px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    font-family: var(--mono);
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.talk-btn:hover {
+    border-color: var(--green);
+    color: var(--green);
+}
+
+/* Talk Overlay — fullscreen chat */
+.talk-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 10, 15, 0.98);
+    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(24px);
+    z-index: 2000;
+    display: none;
+    flex-direction: column;
+}
+
+.talk-overlay.open { display: flex; }
+
+.talk-overlay-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 24px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+}
+
+.talk-overlay-close {
+    margin-left: auto;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 12px;
+    color: var(--fg-secondary);
+    cursor: pointer;
+    font-size: 12px;
+    font-family: var(--mono);
+    transition: var(--transition);
+}
+
+.talk-overlay-close:hover {
+    border-color: var(--fg);
+    color: var(--fg);
+}
+
+.talk-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.talk-input-row {
+    display: flex;
+    gap: 10px;
+    padding: 16px 24px;
+    border-top: 1px solid var(--border);
+    flex-shrink: 0;
+}
+
+.talk-input-row input {
+    flex: 1;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    color: var(--fg);
+    font-family: var(--font);
+    font-size: 14px;
+    outline: none;
+    width: auto;
+}
+
+.talk-input-row input:focus {
+    border-color: var(--accent);
+}
+
+.talk-input-row button {
+    background: var(--accent);
+    color: var(--bg);
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 12px 24px;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: var(--font);
+    cursor: pointer;
+    transition: var(--transition);
+    letter-spacing: 0.05em;
+}
+
+.talk-input-row button:hover { opacity: 0.9; }
+
+/* Talk — light theme */
+[data-theme="light"] .talk-bar {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+[data-theme="light"] .talk-overlay {
+    background: rgba(255, 255, 255, 0.98);
+}
+
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) .talk-bar {
+        background: rgba(255, 255, 255, 0.95);
+    }
+    :root:not([data-theme="dark"]) .talk-overlay {
+        background: rgba(255, 255, 255, 0.98);
+    }
+}
+
+/* Talk — responsive */
+@media (max-width: 640px) {
+    .talk-scope { display: none; }
+    .talk-bar { gap: 8px; padding: 0 16px; }
+}
 
 
 /* ═══════════════════════════════════════════════════════════════════

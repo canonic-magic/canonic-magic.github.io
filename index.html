@@ -45,8 +45,8 @@
         .theme-toggle { background: none; border: 1px solid #333; color: #888; font-size: 12px; padding: 2px 8px; border-radius: 4px; cursor: pointer; margin-left: 8px; transition: all 0.2s; }
         .theme-toggle:hover { border-color: #00ff88; color: #00ff88; }
 
-        /* Hero — padding for eco-bar */
-        .hero { padding-top: 80px; }
+        /* Hero — padding for eco-bar + talk-bar */
+        .hero { padding-top: 116px; }
 
         /* ═══ AXIOM BLOCK ═══ */
         .axiom-block { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; margin-bottom: 20px; }
@@ -147,6 +147,14 @@
             <a href="https://hadleylab-dexter.github.io/CHAT/">TALK</a>
             <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn" title="Toggle light/dark">&#9790;</button>
         </div>
+    </div>
+
+    <!-- TALK BAR -->
+    <div class="talk-bar" id="talkBar">
+        <div class="talk-dot"></div>
+        <span class="talk-scope">MAGIC</span>
+        <input type="text" class="talk-input" id="talkInput" placeholder="Ask about primitives, services, tiers, the galaxy..." autocomplete="off">
+        <button type="button" class="talk-btn" onclick="TALK.open()">TALK</button>
     </div>
 
     <nav class="spa-index">
@@ -465,7 +473,27 @@
         </footer>
     </div>
 
+    <!-- TALK OVERLAY -->
+    <div class="talk-overlay" id="talkOverlay">
+        <div class="talk-overlay-header">
+            <div class="talk-dot"></div>
+            <span class="talk-scope">MAGIC TALK</span>
+            <button type="button" class="talk-overlay-close" onclick="TALK.close()">ESC</button>
+        </div>
+        <div class="talk-messages" id="talkMessages"></div>
+        <div class="talk-input-row">
+            <input type="text" id="talkChatInput" placeholder="Ask about primitives, services, tiers, the galaxy..." autocomplete="off">
+            <button type="button" id="talkSend" onclick="TALK.send()">SEND</button>
+        </div>
+    </div>
+
+    <script src="/talk.js"></script>
     <script>
+        TALK.init({
+            scope: 'MAGIC',
+            system: 'You are TALK, the CANONIC conversation service for MAGIC — the operations platform. Three primitives: INTEL (know), CHAT (say), COIN (do). Services: TALK=CHAT+INTEL, VAULT=COIN+INTEL, SHOP=COIN+INTEL+CHAT, AGENT=all three. Coin=Work. Distribute work. Govern value. Answer concisely.'
+        });
+
         function getTheme() {
             return localStorage.getItem('canonic-theme') || 'auto';
         }
