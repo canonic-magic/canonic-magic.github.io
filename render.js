@@ -31,6 +31,13 @@ var RENDER = (function () {
     function applyAccent(accent) {
         if (!accent) return;
         document.documentElement.style.setProperty('--accent', accent);
+        // Decompose hex → RGB for rgba() usage: rgba(var(--accent-rgb), 0.1)
+        var hex = accent.replace('#', '');
+        if (hex.length === 3) hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+        var r = parseInt(hex.substring(0, 2), 16);
+        var g = parseInt(hex.substring(2, 4), 16);
+        var b = parseInt(hex.substring(4, 6), 16);
+        if (!isNaN(r)) document.documentElement.style.setProperty('--accent-rgb', r + ', ' + g + ', ' + b);
     }
 
     // ── ECO-BAR ───────────────────────────────────────────

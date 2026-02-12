@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAGIC — Governed Intelligence</title>
     <meta name="description" content="Coin = Work. Distribute work. Govern value. Build the galaxy.">
-    <link rel="stylesheet" href="./DESIGN.css">
+    <link rel="stylesheet" href="./DESIGN.css?v=3">
 </head>
 <body>
     <!-- Structure only. CONTENT.json fills every container via render.js. -->
 
     <div class="eco-bar" id="ecoBar"></div>
+    <nav id="nav"></nav>
 
     <!-- Galaxy Hero: render.js detects hero.galaxy → calls GALAXY.init() -->
     <div id="hero"></div>
@@ -26,8 +27,9 @@
         <section id="communities"></section>
         <section id="marketplace"></section>
         <section id="cta"></section>
-        <footer id="footer"></footer>
     </div>
+
+    <footer id="footer"></footer>
 
     <!-- TALK -->
     <div class="talk-overlay" id="talkOverlay">
@@ -45,10 +47,10 @@
 
     <!-- Galaxy primitive: vis-network + magic.js -->
     <script src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
-    <script src="./magic.js?v=2"></script>
+    <script src="./magic.js?v=3"></script>
 
-    <script src="./render.js?v=2"></script>
-    <script src="./talk.js?v=2"></script>
+    <script src="./render.js?v=3"></script>
+    <script src="./talk.js?v=3"></script>
     <script>RENDER.init().then(function() { TALK.init(); });</script>
 </body>
 </html>
