@@ -21,7 +21,8 @@ var RENDER = (function () {
 
     // ── LOAD ──────────────────────────────────────────────
     async function loadJSON(path) {
-        var res = await fetch(path);
+        var sep = path.indexOf('?') === -1 ? '?' : '&';
+        var res = await fetch(path + sep + 'v=' + Date.now());
         if (!res.ok) throw new Error(path + ' ' + res.status);
         return res.json();
     }
