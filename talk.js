@@ -2,40 +2,47 @@
  * TALK — Unified Fleet Conversation Service
  * inherits: CHAT + INTEL
  *
- * One service. Every frontend. Every domain.
- * Advanced MD parsing, typing animation, INTEL ledger wiring.
+ * CANON.json is the SINGLE SOURCE OF TRUTH.
+ * No hardcoded fallbacks. No ungoverned prompts.
+ * MUST read CANON.json. 255 compliance enforced.
  *
  * Usage:
- *   <script src="/talk.js"></script>
- *   <script>TALK.init({ scope: 'HADLEY LAB', system: '...' });</script>
+ *   <script src="/base/talk.js"></script>
+ *   <script>TALK.init();</script>
  *
- * HTML contract (from DESIGN.css Layer 10):
- *   #talkBar, #talkInput, #talkOverlay, #talkMessages, #talkChatInput
+ * CANON.json contract:
+ *   { scope, systemPrompt, welcome, placeholder, disclaimer }
  *
- * Optional INTEL DOM:
- *   #talkIntelTimeline — renders LEARNING.json ledger entries
+ * HTML contract (flexible — supports multiple ID patterns):
+ *   Overlay: #talkOverlay OR #chatOverlay
+ *   Messages: #talkMessages
+ *   Input: #talkChatInput
+ *   Send: #talkSend
+ *   Bar: #talkInput OR #searchInput
+ *   Intel: #talkIntelTimeline
  *
  * API: https://api.canonic.org/chat (Cloudflare Workers)
  *
- * TALK | CANONIC | 2026-02-11
+ * TALK | CANONIC | 2026-02-12
  */
 
 const TALK = {
     api: 'https://api.canonic.org/chat',
     messages: [],
-    scope: 'CANONIC',
-    system: 'You are TALK, the CANONIC conversation service. Answer concisely.',
+    scope: null,
+    system: null,
+    governed: false,
     intelLedger: [],
 
     // ── Initialize ──────────────────────────────────────────────────
     init(config) {
-        if (config.scope) this.scope = config.scope;
-        if (config.system) this.system = config.system;
+        config = config || {};
         if (config.api) this.api = config.api;
 
-        // Wire event listeners
-        var talkInput = document.getElementById('talkInput');
+        // Wire event listeners — support multiple DOM patterns
+        var talkInput = document.getElementById('talkInput') || document.getElementById('searchInput');
         var chatInput = document.getElementById('talkChatInput');
+        var sendBtn = document.getElementById('talkSend');
 
         if (talkInput) {
             talkInput.addEventListener('keypress', function(e) {
@@ -47,27 +54,82 @@ const TALK = {
                 if (e.key === 'Enter') TALK.send();
             });
         }
+        if (sendBtn) {
+            sendBtn.addEventListener('click', function() { TALK.send(); });
+        }
         document.addEventListener('keydown', function(e) {
-            var overlay = document.getElementById('talkOverlay');
+            var overlay = document.getElementById('talkOverlay') || document.getElementById('chatOverlay');
             if (e.key === 'Escape' && overlay && overlay.classList.contains('open')) {
                 TALK.close();
             }
         });
 
-        // Load INTEL ledger (async, non-blocking)
-        this.loadIntel();
+        // CANON.json is REQUIRED — load governance, then INTEL
+        this.loadCanon().then(function() { TALK.loadIntel(); });
+    },
+
+    // ── Load CANON.json — REQUIRED governance source ────────────────
+    async loadCanon() {
+        try {
+            var res = await fetch('./CANON.json');
+            if (!res.ok) throw new Error('CANON.json ' + res.status);
+            var canon = await res.json();
+
+            // MUST have systemPrompt
+            if (!canon.systemPrompt) throw new Error('CANON.json missing systemPrompt');
+
+            this.system = canon.systemPrompt;
+            this.scope = canon.scope || canon.name || 'CANONIC';
+            this.governed = true;
+
+            // Welcome message
+            if (canon.welcome) {
+                var el = document.getElementById('talkMessages');
+                if (el && !el.children.length) {
+                    var div = document.createElement('div');
+                    div.className = 'message assistant';
+                    var textDiv = document.createElement('div');
+                    textDiv.innerHTML = this.md(canon.welcome);
+                    div.appendChild(textDiv);
+                    el.appendChild(div);
+                }
+            }
+
+            // Placeholder
+            if (canon.placeholder) {
+                [document.getElementById('talkChatInput'),
+                 document.getElementById('talkInput'),
+                 document.getElementById('searchInput')
+                ].forEach(function(inp) { if (inp) inp.placeholder = canon.placeholder; });
+            }
+
+        } catch(e) {
+            // UNGOVERNED — refuse to operate with generic prompt
+            this.governed = false;
+            this.system = null;
+            this.scope = 'UNGOVERNED';
+            var el = document.getElementById('talkMessages');
+            if (el) {
+                var div = document.createElement('div');
+                div.className = 'message error';
+                var textDiv = document.createElement('div');
+                textDiv.textContent = 'DETROS VIOLATION — CANON.json missing or invalid. TALK requires governed context. ' + e.message;
+                div.appendChild(textDiv);
+                el.appendChild(div);
+            }
+        }
     },
 
     // ── Overlay Control ─────────────────────────────────────────────
     open() {
-        var overlay = document.getElementById('talkOverlay');
-        var barInput = document.getElementById('talkInput');
+        var overlay = document.getElementById('talkOverlay') || document.getElementById('chatOverlay');
+        var barInput = document.getElementById('talkInput') || document.getElementById('searchInput');
         var chatInput = document.getElementById('talkChatInput');
         if (!overlay) return;
 
         overlay.classList.add('open');
         if (barInput && barInput.value.trim()) {
-            chatInput.value = barInput.value;
+            if (chatInput) chatInput.value = barInput.value;
             barInput.value = '';
             setTimeout(function() { TALK.send(); }, 50);
         }
@@ -75,28 +137,25 @@ const TALK = {
     },
 
     close() {
-        var overlay = document.getElementById('talkOverlay');
+        var overlay = document.getElementById('talkOverlay') || document.getElementById('chatOverlay');
         if (overlay) overlay.classList.remove('open');
-        var barInput = document.getElementById('talkInput');
+        var barInput = document.getElementById('talkInput') || document.getElementById('searchInput');
         if (barInput) barInput.focus();
     },
 
     // ── Markdown Parser (XSS-safe, full typesetting) ──────────────────
     md(text) {
-        // Escape HTML entities
         var escaped = text
             .replace(/&/g, '&amp;')
             .replace(/</g, '&lt;')
             .replace(/>/g, '&gt;');
 
-        // Extract fenced code blocks before inline processing
         var codeBlocks = [];
         escaped = escaped.replace(/```(\w*)\n([\s\S]*?)```/g, function(m, lang, code) {
             codeBlocks.push('<pre><code' + (lang ? ' class="lang-' + lang + '"' : '') + '>' + code.trimEnd() + '</code></pre>');
             return '\x00CODE' + (codeBlocks.length - 1) + '\x00';
         });
 
-        // Inline markdown
         var html = escaped
             .replace(/^### (.+)$/gm, '<h4>$1</h4>')
             .replace(/^## (.+)$/gm, '<h3>$1</h3>')
@@ -106,7 +165,6 @@ const TALK = {
             .replace(/\*(.+?)\*/g, '<em>$1</em>')
             .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
 
-        // Smart typography
         html = html
             .replace(/---/g, '\u2014')
             .replace(/--/g, '\u2013')
@@ -114,7 +172,6 @@ const TALK = {
             .replace(/"([^"]+)"/g, '\u201c$1\u201d')
             .replace(/'([^']+)'/g, '\u2018$1\u2019');
 
-        // Block-level parsing
         var lines = html.split('\n');
         var result = [];
         var inList = false;
@@ -124,7 +181,6 @@ const TALK = {
         for (var i = 0; i < lines.length; i++) {
             var line = lines[i];
 
-            // Restore code blocks
             var codeMatch = line.match(/^\x00CODE(\d+)\x00$/);
             if (codeMatch) {
                 if (inList) { result.push('</' + listType + '>'); inList = false; listType = null; }
@@ -133,7 +189,6 @@ const TALK = {
                 continue;
             }
 
-            // Horizontal rule
             if (/^[-*_]{3,}$/.test(line.trim())) {
                 if (inList) { result.push('</' + listType + '>'); inList = false; listType = null; }
                 if (inBlockquote) { result.push('</blockquote>'); inBlockquote = false; }
@@ -141,7 +196,6 @@ const TALK = {
                 continue;
             }
 
-            // Blockquote
             var bqMatch = line.match(/^&gt;\s?(.*)$/);
             if (bqMatch) {
                 if (inList) { result.push('</' + listType + '>'); inList = false; listType = null; }
@@ -153,7 +207,6 @@ const TALK = {
                 inBlockquote = false;
             }
 
-            // Lists
             var ulMatch = line.match(/^[-*]\s+(.+)$/);
             var olMatch = line.match(/^\d+\.\s+(.+)$/);
 
@@ -235,29 +288,15 @@ const TALK = {
 
     // ── INTEL Ledger ────────────────────────────────────────────────
     async loadIntel() {
-        var scope = this.scope.toUpperCase().replace(/\s/g, '');
-
-        // Try FaaS first
+        // Static LEARNING.json — the governed source
         try {
-            var res = await fetch('/api/faas/TALK/' + scope + '/learning');
+            var res = await fetch('./LEARNING.json');
             if (res.ok) {
                 var data = await res.json();
                 this.intelLedger = data.ledger || [];
                 this.renderIntel();
-                return;
             }
-        } catch(e) { /* FaaS unavailable */ }
-
-        // Try static LEARNING.json
-        try {
-            var res2 = await fetch('./LEARNING.json');
-            if (res2.ok) {
-                var data2 = await res2.json();
-                this.intelLedger = data2.ledger || [];
-                this.renderIntel();
-                return;
-            }
-        } catch(e) { /* Static unavailable */ }
+        } catch(e) { /* LEARNING.json unavailable */ }
     },
 
     renderIntel() {
@@ -274,6 +313,12 @@ const TALK = {
 
     // ── Send Message ────────────────────────────────────────────────
     async send() {
+        // Refuse if ungoverned
+        if (!this.governed || !this.system) {
+            this.add('DETROS VIOLATION — Cannot send. CANON.json not loaded. This TALK is ungoverned.', 'error');
+            return;
+        }
+
         var input = document.getElementById('talkChatInput');
         if (!input) return;
 
@@ -308,7 +353,6 @@ const TALK = {
                 (data.content && data.content[0] && data.content[0].text) ||
                 'Could not process that.';
 
-            // Render with typing animation
             var msgEl = this.add('', 'assistant');
             var textEl = msgEl ? (msgEl.querySelector('div') || msgEl.firstChild) : null;
             if (textEl) {
@@ -325,4 +369,3 @@ const TALK = {
         input.focus();
     }
 };
-

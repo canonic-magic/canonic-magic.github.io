@@ -6,7 +6,7 @@
  * DESIGN = LANGUAGE
  * WORK   = COIN
  *
- * The LANG dimension of DETROS (128-bit).
+ * The LANG dimension of MAGIC (128-bit).
  * One file. Every frontend inherits it.
  * One variable changes per scope: --accent.
  * Everything else is THE DESIGN.
