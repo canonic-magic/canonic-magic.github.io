@@ -131,6 +131,16 @@ var RENDER = (function () {
         html += '<h1 class="gradient-text">' + hero.title + '</h1>';
         if (hero.subtitle) html += '<p class="subtitle">' + hero.subtitle + '</p>';
         if (hero.description) html += '<p class="description">' + hero.description + '</p>';
+        if (hero.cta && hero.cta.length) {
+            html += '<div class="hero-cta">';
+            hero.cta.forEach(function (btn) {
+                var cls = btn.class || 'btn';
+                if (cls.indexOf('btn') !== 0) cls = 'btn ' + cls;
+                var onclick = btn.talk ? ' onclick="TALK.open();return false"' : '';
+                html += '<a href="' + (btn.href || '#') + '" class="' + cls + '"' + onclick + '>' + btn.label + '</a>';
+            });
+            html += '</div>';
+        }
         html += '</div>';
         html += '<div id="galaxyContainer" class="galaxy-container" style="height:' + (g.height || '70vh') + ';"></div>';
         html += '</div>';
