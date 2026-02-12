@@ -164,11 +164,11 @@ var GALAXY = (function () {
     }
 
     // ── INIT ────────────────────────────────────────────
-    async function init() {
+    async function init(el) {
         var res = await fetch('./scopes.json');
         scopes = await res.json();
 
-        var container = document.getElementById('galaxy');
+        var container = el || document.getElementById('galaxy');
         if (!container) return;
 
         buildGraph(container);
