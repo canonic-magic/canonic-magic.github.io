@@ -81,12 +81,20 @@ const TALK = {
         if (barInput) barInput.focus();
     },
 
-    // ── Markdown Parser (XSS-safe, headings + lists + code + inline) ──
+    // ── Markdown Parser (XSS-safe, full typesetting) ──────────────────
     md(text) {
+        // Escape HTML entities
         var escaped = text
             .replace(/&/g, '&amp;')
             .replace(/</g, '&lt;')
             .replace(/>/g, '&gt;');
+
+        // Extract fenced code blocks before inline processing
+        var codeBlocks = [];
+        escaped = escaped.replace(/```(\w*)\n([\s\S]*?)```/g, function(m, lang, code) {
+            codeBlocks.push('<pre><code' + (lang ? ' class="lang-' + lang + '"' : '') + '>' + code.trimEnd() + '</code></pre>');
+            return '\x00CODE' + (codeBlocks.length - 1) + '\x00';
+        });
 
         // Inline markdown
         var html = escaped
@@ -95,18 +103,59 @@ const TALK = {
             .replace(/^# (.+)$/gm, '<h2>$1</h2>')
             .replace(/`([^`]+)`/g, '<code>$1</code>')
             .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-            .replace(/\*(.+?)\*/g, '<em>$1</em>');
+            .replace(/\*(.+?)\*/g, '<em>$1</em>')
+            .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
 
-        // Block-level: lists + paragraphs
+        // Smart typography
+        html = html
+            .replace(/---/g, '\u2014')
+            .replace(/--/g, '\u2013')
+            .replace(/\.\.\./g, '\u2026')
+            .replace(/"([^"]+)"/g, '\u201c$1\u201d')
+            .replace(/'([^']+)'/g, '\u2018$1\u2019');
+
+        // Block-level parsing
         var lines = html.split('\n');
         var result = [];
         var inList = false;
         var listType = null;
+        var inBlockquote = false;
 
         for (var i = 0; i < lines.length; i++) {
             var line = lines[i];
-            var ulMatch = line.match(/^- (.+)$/);
-            var olMatch = line.match(/^\d+\. (.+)$/);
+
+            // Restore code blocks
+            var codeMatch = line.match(/^\x00CODE(\d+)\x00$/);
+            if (codeMatch) {
+                if (inList) { result.push('</' + listType + '>'); inList = false; listType = null; }
+                if (inBlockquote) { result.push('</blockquote>'); inBlockquote = false; }
+                result.push(codeBlocks[parseInt(codeMatch[1])]);
+                continue;
+            }
+
+            // Horizontal rule
+            if (/^[-*_]{3,}$/.test(line.trim())) {
+                if (inList) { result.push('</' + listType + '>'); inList = false; listType = null; }
+                if (inBlockquote) { result.push('</blockquote>'); inBlockquote = false; }
+                result.push('<hr>');
+                continue;
+            }
+
+            // Blockquote
+            var bqMatch = line.match(/^&gt;\s?(.*)$/);
+            if (bqMatch) {
+                if (inList) { result.push('</' + listType + '>'); inList = false; listType = null; }
+                if (!inBlockquote) { result.push('<blockquote>'); inBlockquote = true; }
+                if (bqMatch[1].trim()) result.push('<p>' + bqMatch[1] + '</p>');
+                continue;
+            } else if (inBlockquote) {
+                result.push('</blockquote>');
+                inBlockquote = false;
+            }
+
+            // Lists
+            var ulMatch = line.match(/^[-*]\s+(.+)$/);
+            var olMatch = line.match(/^\d+\.\s+(.+)$/);
 
             if (ulMatch || olMatch) {
                 var newType = ulMatch ? 'ul' : 'ol';
@@ -127,6 +176,7 @@ const TALK = {
             }
         }
         if (inList) result.push('</' + listType + '>');
+        if (inBlockquote) result.push('</blockquote>');
         return result.join('');
     },
 
