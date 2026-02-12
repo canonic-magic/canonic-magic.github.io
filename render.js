@@ -52,7 +52,7 @@ var RENDER = (function () {
             var active = s.scope === currentScope ? ' eco-active' : '';
             html += '<a href="' + s.url + '" class="' + active + '">' + s.label + '</a>';
         });
-        html += '<a href="#" onclick="TALK.open();return false">TALK</a>';
+        html += '<a href="#" class="eco-talk" onclick="TALK.open();return false"><span class="eco-talk-dot"></span>TALK</a>';
         // Extra links (e.g. MammoChat)
         if (fleet.extra) {
             fleet.extra.forEach(function (e) {
