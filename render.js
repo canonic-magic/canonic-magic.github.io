@@ -325,6 +325,19 @@ var RENDER = (function () {
                 html += '</div><span class="vaas-mark">\u2229</span></div>';
             }
 
+            // Galaxy (inline section — not hero)
+            if (sec.galaxy) {
+                var gId = 'galaxyContainer-' + sec.id;
+                html += '<div id="' + gId + '" class="galaxy-container" style="height:' + (sec.galaxy.height || '70vh') + ';margin-top:32px;border-radius:16px;overflow:hidden;"></div>';
+                // Defer init until DOM is written
+                (function (containerId, opts) {
+                    setTimeout(function () {
+                        var c = document.getElementById(containerId);
+                        if (c && typeof GALAXY !== 'undefined') GALAXY.init(c, opts);
+                    }, 0);
+                })(gId, sec.galaxy);
+            }
+
             // Galaxy stats
             if (sec.galaxyStats && sec.galaxyStats.length) {
                 html += '<div class="galaxy-stats">';
