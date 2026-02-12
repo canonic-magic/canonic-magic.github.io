@@ -113,7 +113,7 @@ const TALK = {
                 var div = document.createElement('div');
                 div.className = 'message error';
                 var textDiv = document.createElement('div');
-                textDiv.textContent = 'DETROS VIOLATION — CANON.json missing or invalid. TALK requires governed context. ' + e.message;
+                textDiv.textContent = 'MAGIC VIOLATION — CANON.json missing or invalid. TALK requires governed context. ' + e.message;
                 div.appendChild(textDiv);
                 el.appendChild(div);
             }
@@ -315,7 +315,7 @@ const TALK = {
     async send() {
         // Refuse if ungoverned
         if (!this.governed || !this.system) {
-            this.add('DETROS VIOLATION — Cannot send. CANON.json not loaded. This TALK is ungoverned.', 'error');
+            this.add('MAGIC VIOLATION — Cannot send. CANON.json not loaded. This TALK is ungoverned.', 'error');
             return;
         }
 

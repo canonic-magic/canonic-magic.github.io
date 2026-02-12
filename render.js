@@ -450,17 +450,76 @@ var RENDER = (function () {
 
     // ── ABOUT ─────────────────────────────────────────────
     function renderAbout(about) {
-        var html = '<div style="text-align:center;">';
+        var html = '<div class="about-section">';
+
+        // Identity block
+        html += '<div class="about-identity">';
         html += '<div class="about-avatar">' + about.initials + '</div>';
-        html += '<h3 style="font-size:24px;margin-bottom:8px;">' + about.name + '</h3>';
-        html += '<p class="muted" style="margin-bottom:16px;">' + about.title + '</p>';
+        html += '<h3 class="about-name">' + about.name + '</h3>';
+        html += '<p class="about-title">' + about.title + '</p>';
+        if (about.location) html += '<p class="about-location">' + about.location + (about.institution ? ' · ' + about.institution : '') + '</p>';
+        if (about.tagline) html += '<p class="about-tagline">' + about.tagline + '</p>';
+
+        // Links
+        if (about.links && about.links.length) {
+            html += '<div class="about-links">';
+            about.links.forEach(function (l) {
+                html += '<a href="' + l.href + '" target="_blank" rel="noopener" class="about-link">' + l.label + ' →</a>';
+            });
+            html += '</div>';
+        }
+        html += '</div>';
+
+        // Tags
         if (about.tags && about.tags.length) {
-            html += '<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">';
+            html += '<div class="about-tags">';
             about.tags.forEach(function (t) {
                 html += '<span class="about-tag">' + t + '</span>';
             });
             html += '</div>';
         }
+
+        // Key Publications
+        if (about.publications && about.publications.length) {
+            html += '<div class="about-pubs">';
+            html += '<h4 class="about-section-title">Key Publications</h4>';
+            about.publications.forEach(function (p) {
+                html += '<div class="about-pub">';
+                html += '<span class="about-pub-authors">' + p.authors + '</span> ';
+                html += '<em>' + p.title + '</em>. ';
+                html += '<span class="about-pub-journal">' + p.journal + '</span>';
+                if (p.year) html += ' (' + p.year + ')';
+                html += '</div>';
+            });
+            html += '</div>';
+        }
+
+        // Career Lineage
+        if (about.lineage && about.lineage.length) {
+            html += '<div class="about-lineage">';
+            html += '<h4 class="about-section-title">Career Lineage</h4>';
+            html += '<div class="lineage-track">';
+            about.lineage.forEach(function (l, i) {
+                html += '<div class="lineage-node">';
+                html += '<div class="lineage-year">' + l.year + '</div>';
+                html += '<div class="lineage-dot"></div>';
+                html += '<div class="lineage-milestone">' + l.milestone + '</div>';
+                html += '<div class="lineage-work">' + l.work + '</div>';
+                html += '</div>';
+            });
+            html += '</div>';
+            html += '</div>';
+        }
+
+        // Orgs
+        if (about.orgs && about.orgs.length) {
+            html += '<div class="about-orgs">';
+            about.orgs.forEach(function (o) {
+                html += '<span class="about-org">' + o.name + ' <span class="about-org-year">' + o.year + '</span></span>';
+            });
+            html += '</div>';
+        }
+
         html += '</div>';
         return html;
     }
