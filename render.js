@@ -45,9 +45,37 @@ var RENDER = (function () {
             html += '<a href="' + s.url + '" class="' + active + '">' + s.label + '</a>';
         });
         html += '<a href="#" onclick="TALK.open();return false">TALK</a>';
+        // Extra links (e.g. MammoChat)
+        if (fleet.extra) {
+            fleet.extra.forEach(function (e) {
+                html += '<a href="' + e.href + '">' + e.label + '</a>';
+            });
+        }
         html += '<button class="theme-toggle" onclick="toggleTheme()" id="theme-btn" title="Toggle light/dark">\u263E</button>';
         html += '</div>';
         bar.innerHTML = html;
+    }
+
+    // ── NAV ──────────────────────────────────────────────
+    function renderNav(nav, scopeIcon, scopeName) {
+        var el = document.getElementById('nav');
+        if (!el) return;
+
+        var html = '<div class="nav-inner">';
+        html += '<a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--fg);">';
+        if (scopeIcon) html += '<span style="font-size:32px;color:var(--accent);transform:rotate(90deg);display:inline-block;line-height:1;">' + scopeIcon + '</span>';
+        if (scopeName) html += '<span style="font-size:20px;font-weight:600;letter-spacing:-0.02em;">' + scopeName + '</span>';
+        html += '</a>';
+
+        if (nav && nav.length) {
+            html += '<ul class="nav-links">';
+            nav.forEach(function (item) {
+                html += '<li><a href="' + item.href + '">' + item.label + '</a></li>';
+            });
+            html += '</ul>';
+        }
+        html += '</div>';
+        el.innerHTML = html;
     }
 
     // ── HERO ──────────────────────────────────────────────
@@ -55,6 +83,19 @@ var RENDER = (function () {
         var el = document.getElementById('hero');
         if (!el || !hero) return;
 
+        // Galaxy hero — delegate to GALAXY.init
+        if (hero.galaxy) {
+            renderGalaxyHero(el, hero);
+            return;
+        }
+
+        // Demo hero — split layout with iPhone mock
+        if (hero.demo) {
+            renderDemoHero(el, hero);
+            return;
+        }
+
+        // Standard hero
         var html = '';
         if (hero.badge) html += '<div class="hero-badge">' + hero.badge + '</div>';
         html += '<h1 class="gradient-text">' + hero.title + '</h1>';
@@ -63,7 +104,8 @@ var RENDER = (function () {
         if (hero.cta && hero.cta.length) {
             html += '<div class="hero-cta">';
             hero.cta.forEach(function (btn, i) {
-                var cls = i === 0 ? 'btn' : 'btn btn-secondary';
+                var cls = btn.class || (i === 0 ? 'btn' : 'btn btn-secondary');
+                if (cls.indexOf('btn') !== 0) cls = 'btn ' + cls;
                 var onclick = btn.talk ? ' onclick="TALK.open();return false"' : '';
                 html += '<a href="' + (btn.href || '#') + '" class="' + cls + '"' + onclick + '>' + btn.label + '</a>';
             });
@@ -72,16 +114,103 @@ var RENDER = (function () {
         el.innerHTML = html;
     }
 
+    // ── GALAXY HERO ─────────────────────────────────────
+    function renderGalaxyHero(el, hero) {
+        var g = hero.galaxy;
+        var html = '<div class="galaxy-hero">';
+        html += '<div class="galaxy-hero-text">';
+        if (hero.badge) html += '<div class="hero-badge">' + hero.badge + '</div>';
+        html += '<h1 class="gradient-text">' + hero.title + '</h1>';
+        if (hero.subtitle) html += '<p class="subtitle">' + hero.subtitle + '</p>';
+        if (hero.description) html += '<p class="description">' + hero.description + '</p>';
+        html += '</div>';
+        html += '<div id="galaxyContainer" class="galaxy-container" style="height:' + (g.height || '70vh') + ';"></div>';
+        html += '</div>';
+        el.innerHTML = html;
+
+        // Initialize Galaxy after DOM insert
+        if (typeof GALAXY !== 'undefined') {
+            GALAXY.init(document.getElementById('galaxyContainer'), g);
+        }
+    }
+
+    // ── DEMO HERO (iPhone Mock) ─────────────────────────
+    function renderDemoHero(el, hero) {
+        var d = hero.demo;
+        var msgs = d.messages || [];
+
+        // Left column: text
+        var html = '<div class="hero-split"><div class="hero-split-inner">';
+        html += '<div class="hero-content">';
+        if (hero.badge) html += '<div class="hero-badge">' + hero.badge + '</div>';
+        html += '<h1>' + hero.title + '</h1>';
+        if (hero.description) html += '<p>' + hero.description + '</p>';
+        if (hero.cta && hero.cta.length) {
+            html += '<div class="hero-cta">';
+            hero.cta.forEach(function (btn) {
+                var cls = btn.class || 'btn';
+                if (cls.indexOf('btn') !== 0) cls = 'btn ' + cls;
+                var onclick = btn.talk ? ' onclick="TALK.open();return false"' : '';
+                html += '<a href="' + (btn.href || '#') + '" class="' + cls + '"' + onclick + '>' + btn.label + '</a>';
+            });
+            html += '</div>';
+        }
+        html += '</div>';
+
+        // Right column: iPhone mock
+        html += '<div class="device-container"><div class="device-glow"></div>';
+        html += '<div class="iphone"><div class="iphone-screen"><div class="app-preview">';
+        html += '<div class="chat-header">' + (d.productIcon || '') + ' ' + (d.product || '') + '</div>';
+
+        // Chat messages
+        html += '<div class="chat-messages">';
+        var msgIdx = 0;
+        var typIdx = 0;
+        msgs.forEach(function (m) {
+            msgIdx++;
+            if (m.role === 'user') {
+                html += '<div class="chat-msg chat-user msg-' + msgIdx + '">' + m.text + '</div>';
+                // Add typing indicator after user message
+                typIdx++;
+                html += '<div class="typing-indicator typing-' + typIdx + '"><span></span><span></span><span></span></div>';
+            } else {
+                html += '<div class="chat-msg chat-bot msg-' + msgIdx + '">' + m.text + '</div>';
+                if (m.citation) {
+                    msgIdx++;
+                    html += '<div class="chat-msg chat-cite msg-' + msgIdx + '">\ud83d\udccb ' + m.citation + '</div>';
+                }
+            }
+        });
+        html += '</div>';
+
+        // Input area with typewriter
+        html += '<div class="chat-input-area"><div class="chat-input">';
+        var inputIdx = 0;
+        msgs.forEach(function (m) {
+            if (m.role === 'user') {
+                inputIdx++;
+                html += '<div class="input-text-wrapper input-wrapper-' + inputIdx + '">';
+                html += '<span class="input-text">' + m.text + '</span><span class="input-cursor"></span></div>';
+            }
+        });
+        html += '</div><div class="chat-send">\u279A</div></div>';
+
+        html += '</div></div></div></div>';
+        html += '</div></div>';
+        el.innerHTML = html;
+    }
+
     // ── STATS ─────────────────────────────────────────────
     function renderStats(stats) {
         var el = document.getElementById('stats');
         if (!el || !stats || !stats.length) return;
 
-        var html = '';
+        var html = '<div class="stats">';
         stats.forEach(function (s) {
             html += '<div class="stat"><div class="stat-value">' + s.value + '</div>';
             html += '<div class="stat-label">' + s.label + '</div></div>';
         });
+        html += '</div>';
         el.innerHTML = html;
     }
 
@@ -95,41 +224,35 @@ var RENDER = (function () {
 
             var html = '';
             if (sec.wrapClass) html += '<div class="' + sec.wrapClass + '">';
-            if (sec.title) html += '<h2>' + sec.title + '</h2>';
+
+            // Eyebrow
+            if (sec.eyebrow) html += '<div class="section-eyebrow text-center">' + sec.eyebrow + '</div>';
+            if (sec.title) html += '<h2 class="section-title text-center">' + sec.title + '</h2>';
             if (sec.description) html += '<p class="description">' + sec.description + '</p>';
 
             // Cards grid
             if (sec.cards && sec.cards.length) {
-                var cols = sec.columns || 'auto-fit, minmax(280px, 1fr)';
-                html += '<div style="display:grid;grid-template-columns:repeat(' + cols + ');gap:' + (sec.gap || '20px') + ';margin-top:32px;">';
-                sec.cards.forEach(function (c) {
-                    html += '<div class="' + (c.class || 'card') + '">';
-                    if (c.icon) html += '<div class="' + (c.iconClass || '') + '">' + c.icon + '</div>';
-                    if (c.eyebrow) html += '<div style="font-size:12px;color:var(--accent);font-weight:600;letter-spacing:0.1em;margin-bottom:6px;">' + c.eyebrow + '</div>';
-                    if (c.num) html += '<div style="font-family:var(--mono);font-size:11px;color:var(--accent);font-weight:700;margin-bottom:6px;">' + c.num + '</div>';
-                    if (c.title) html += '<h3>' + c.title + '</h3>';
-                    if (c.subtitle) html += '<div style="font-family:var(--mono);font-size:12px;color:var(--accent);margin-bottom:12px;">' + c.subtitle + '</div>';
-                    if (c.text) html += '<p style="font-size:13px;color:var(--fg-secondary);line-height:1.6;">' + c.text + '</p>';
-                    if (c.tags && c.tags.length) {
-                        html += '<div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;">';
-                        c.tags.forEach(function (t) {
-                            html += '<span style="padding:4px 10px;background:rgba(var(--accent-rgb,59,130,246),0.08);border:1px solid rgba(var(--accent-rgb,59,130,246),0.2);border-radius:6px;font-size:11px;font-weight:600;color:var(--accent);">' + t + '</span>';
-                        });
-                        html += '</div>';
-                    }
-                    if (c.flow && c.flow.length) {
-                        html += '<div class="flow">';
-                        c.flow.forEach(function (node, i) {
-                            if (i > 0) html += '<div class="flow-arrow">&rarr;</div>';
-                            var accentCls = (i === Math.floor(c.flow.length / 2)) ? ' accent' : '';
-                            html += '<div class="flow-node' + accentCls + '">' + node + '</div>';
-                        });
-                        html += '</div>';
-                    }
-                    if (c.badge) html += '<span style="display:inline-block;margin-top:12px;padding:4px 12px;background:rgba(var(--accent-rgb,59,130,246),0.12);color:var(--accent);border-radius:6px;font-size:11px;font-weight:700;">' + c.badge + '</span>';
-                    html += '</div>';
-                });
-                html += '</div>';
+                html += renderCards(sec);
+            }
+
+            // Products
+            if (sec.products) {
+                html += renderProducts(sec.products);
+            }
+
+            // Deals
+            if (sec.deals) {
+                html += renderDeals(sec.deals);
+            }
+
+            // About
+            if (sec.about) {
+                html += renderAbout(sec.about);
+            }
+
+            // Banner (governance banner)
+            if (sec.banner) {
+                html += renderBanner(sec.banner);
             }
 
             // Table
@@ -212,6 +335,155 @@ var RENDER = (function () {
         });
     }
 
+    // ── CARDS ─────────────────────────────────────────────
+    function renderCards(sec) {
+        var cols = sec.columns || 'auto-fit, minmax(280px, 1fr)';
+        var html = '<div style="display:grid;grid-template-columns:repeat(' + cols + ');gap:' + (sec.gap || '20px') + ';margin-top:32px;">';
+        sec.cards.forEach(function (c) {
+            html += '<div class="' + (c.class || 'card') + '">';
+
+            // Status badge (top-right, e.g. LIVE)
+            if (c.statusBadge) {
+                html += '<div class="status-badge">' + c.statusBadge + '</div>';
+            }
+
+            // Icon with gradient
+            if (c.icon) {
+                if (c.iconGradient) {
+                    html += '<div class="primitive-icon" style="background:linear-gradient(135deg,' + c.iconGradient[0] + ',' + c.iconGradient[1] + ');">' + c.icon + '</div>';
+                } else {
+                    html += '<div class="' + (c.iconClass || '') + '">' + c.icon + '</div>';
+                }
+            }
+
+            if (c.eyebrow) html += '<div style="font-size:12px;color:var(--accent);font-weight:600;letter-spacing:0.1em;margin-bottom:6px;">' + c.eyebrow + '</div>';
+            if (c.num) html += '<div style="font-family:var(--mono);font-size:11px;color:var(--accent);font-weight:700;margin-bottom:6px;">' + c.num + '</div>';
+            if (c.title) {
+                var tStyle = c.titleColor ? ' style="color:' + c.titleColor + ';margin-bottom:8px;"' : '';
+                html += '<h3' + tStyle + '>' + c.title + '</h3>';
+            }
+            if (c.subtitle) html += '<div class="muted" style="font-size:13px;font-weight:600;margin-bottom:8px;">' + c.subtitle + '</div>';
+            if (c.text) html += '<p style="font-size:13px;color:var(--fg-secondary);line-height:1.6;">' + c.text + '</p>';
+            if (c.tags && c.tags.length) {
+                html += '<div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;">';
+                c.tags.forEach(function (t) {
+                    html += '<span style="padding:4px 10px;background:rgba(var(--accent-rgb,59,130,246),0.08);border:1px solid rgba(var(--accent-rgb,59,130,246),0.2);border-radius:6px;font-size:11px;font-weight:600;color:var(--accent);">' + t + '</span>';
+                });
+                html += '</div>';
+            }
+            if (c.flow && c.flow.length) {
+                html += '<div class="flow">';
+                c.flow.forEach(function (node, i) {
+                    if (i > 0) html += '<div class="flow-arrow">&rarr;</div>';
+                    var accentCls = (i === Math.floor(c.flow.length / 2)) ? ' accent' : '';
+                    html += '<div class="flow-node' + accentCls + '">' + node + '</div>';
+                });
+                html += '</div>';
+            }
+
+            // Badge — object or string
+            if (c.badge) {
+                if (typeof c.badge === 'object') {
+                    html += '<div style="margin-top:16px;"><span class="badge" style="border-color:' + c.badge.color + ';color:' + c.badge.color + ';">' + c.badge.label + '</span></div>';
+                } else {
+                    html += '<span style="display:inline-block;margin-top:12px;padding:4px 12px;background:rgba(var(--accent-rgb,59,130,246),0.12);color:var(--accent);border-radius:6px;font-size:11px;font-weight:700;">' + c.badge + '</span>';
+                }
+            }
+
+            // Card-level CTA
+            if (c.cta) {
+                var cCls = c.cta.class || 'btn';
+                if (cCls.indexOf('btn') !== 0) cCls = 'btn ' + cCls;
+                html += '<a href="' + (c.cta.href || '#') + '" class="' + cCls + '" style="margin-top:16px;font-size:12px;padding:8px 16px;display:inline-block;">' + c.cta.label + '</a>';
+            }
+
+            html += '</div>';
+        });
+        html += '</div>';
+        return html;
+    }
+
+    // ── PRODUCTS ──────────────────────────────────────────
+    function renderProducts(products) {
+        var html = '<div class="apps-grid">';
+        products.forEach(function (p) {
+            html += '<a href="' + (p.href || '#') + '" class="app-card">';
+            html += '<div class="app-icon ' + (p.iconClass || '') + '">' + p.icon + '</div>';
+            html += '<div class="app-name">' + p.name + '</div>';
+            html += '<div class="app-desc">' + p.description + '</div>';
+            var badgeBg = p.statusColor ? 'rgba(' + hexToRgb(p.statusColor) + ',0.15)' : 'rgba(96,165,250,0.15)';
+            var badgeColor = p.statusColor || 'var(--accent)';
+            html += '<span class="app-badge" style="background:' + badgeBg + ';color:' + badgeColor + ';">' + p.status + '</span>';
+            html += '</a>';
+        });
+        html += '</div>';
+        return html;
+    }
+
+    // ── DEALS ─────────────────────────────────────────────
+    function renderDeals(deals) {
+        var html = '<div class="apps-grid">';
+        deals.forEach(function (d) {
+            var vaultStyle = d.vault ? 'border-color:rgba(212,175,55,0.2);opacity:0.65;' : '';
+            html += '<a href="' + (d.href || '#') + '" class="app-card" style="' + vaultStyle + '">';
+
+            // Icon
+            if (d.iconGradient) {
+                html += '<div class="app-icon" style="background:linear-gradient(135deg,' + d.iconGradient[0] + ',' + d.iconGradient[1] + ');">' + d.icon + '</div>';
+            } else {
+                html += '<div class="app-icon ' + (d.iconClass || '') + '">' + d.icon + '</div>';
+            }
+
+            html += '<div class="app-name">' + d.name + '</div>';
+            html += '<div class="app-desc">' + d.description + '</div>';
+
+            var badgeBg = d.badgeColor ? 'rgba(' + hexToRgb(d.badgeColor) + ',0.15)' : d.vault ? 'rgba(212,175,55,0.15)' : 'rgba(96,165,250,0.15)';
+            var badgeColor = d.badgeColor || (d.vault ? 'var(--gold)' : 'var(--accent)');
+            var lockIcon = d.vault ? '\ud83d\udd12 ' : '';
+            html += '<span class="app-badge" style="background:' + badgeBg + ';color:' + badgeColor + ';">' + lockIcon + d.badge + '</span>';
+            html += '</a>';
+        });
+        html += '</div>';
+        return html;
+    }
+
+    // ── ABOUT ─────────────────────────────────────────────
+    function renderAbout(about) {
+        var html = '<div style="text-align:center;">';
+        html += '<div class="about-avatar">' + about.initials + '</div>';
+        html += '<h3 style="font-size:24px;margin-bottom:8px;">' + about.name + '</h3>';
+        html += '<p class="muted" style="margin-bottom:16px;">' + about.title + '</p>';
+        if (about.tags && about.tags.length) {
+            html += '<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">';
+            about.tags.forEach(function (t) {
+                html += '<span class="about-tag">' + t + '</span>';
+            });
+            html += '</div>';
+        }
+        html += '</div>';
+        return html;
+    }
+
+    // ── BANNER ────────────────────────────────────────────
+    function renderBanner(banner) {
+        var html = '<div class="governance-banner" style="margin-top:64px;">';
+        html += '<div style="flex:1;">';
+        if (banner.eyebrow) html += '<div class="section-eyebrow">' + banner.eyebrow + '</div>';
+        if (banner.title) html += '<h3 style="font-size:28px;margin-bottom:16px;line-height:1.3;">' + banner.title + '</h3>';
+        if (banner.text) html += '<p class="muted" style="line-height:1.7;">' + banner.text + '</p>';
+        if (banner.badges && banner.badges.length) {
+            html += '<div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;">';
+            banner.badges.forEach(function (b) {
+                html += '<span class="badge" style="border-color:' + b.color + ';color:' + b.color + ';">' + b.label + '</span>';
+            });
+            html += '</div>';
+        }
+        html += '</div>';
+        html += '<span style="font-size:80px;opacity:0.6;color:var(--accent);">\u2229</span>';
+        html += '</div>';
+        return html;
+    }
+
     // ── CTA ───────────────────────────────────────────────
     function renderCTA(cta) {
         var el = document.getElementById('cta');
@@ -219,19 +491,18 @@ var RENDER = (function () {
 
         var html = '';
         if (cta.class) {
-            // Wrapped CTA (e.g. MAGIC's gradient .cta div)
             html += '<div class="' + cta.class + '">';
             html += '<h3>' + cta.title + '</h3>';
             html += '<p>' + cta.description + '</p>';
             html += '<div class="cta-buttons">';
         } else {
-            // Bare CTA (Foundation style)
             html += '<div class="cta-title">' + cta.title + '</div>';
             html += '<div class="cta-desc">' + cta.description + '</div>';
             html += '<div class="cta-buttons">';
         }
         (cta.buttons || []).forEach(function (btn, i) {
-            var cls = i === 0 ? 'btn' : 'btn btn-secondary';
+            var cls = btn.class || (i === 0 ? 'btn' : 'btn btn-secondary');
+            if (cls.indexOf('btn') !== 0) cls = 'btn ' + cls;
             var onclick = btn.talk ? ' onclick="TALK.open();return false"' : '';
             html += '<a href="' + (btn.href || '#') + '" class="' + cls + '"' + onclick + '>' + btn.label + '</a>';
         });
@@ -241,18 +512,67 @@ var RENDER = (function () {
     }
 
     // ── FOOTER ────────────────────────────────────────────
-    function renderFooter(fleet, tagline) {
+    function renderFooter(fleet, footerData, tagline) {
         var el = document.getElementById('footer');
-        if (!el || !fleet) return;
+        if (!el) return;
 
         var html = '';
-        fleet.sites.forEach(function (s, i) {
-            if (i > 0) html += ' · ';
-            html += '<a href="' + s.url + '">' + s.label + '</a>';
-        });
-        html += ' · <a href="#" onclick="TALK.open();return false">TALK</a>';
-        html += '<br><br>' + (tagline || 'CANONIC');
+        // Custom footer links from CONTENT.json
+        if (footerData && footerData.links) {
+            html += '<div style="display:flex;gap:24px;justify-content:center;margin-bottom:16px;flex-wrap:wrap;">';
+            footerData.links.forEach(function (l) {
+                html += '<a href="' + l.href + '">' + l.label + '</a>';
+            });
+            html += '</div>';
+            html += '<p>' + (footerData.tagline || tagline || 'CANONIC') + '</p>';
+        } else if (fleet) {
+            // Default: fleet links
+            fleet.sites.forEach(function (s, i) {
+                if (i > 0) html += ' \u00b7 ';
+                html += '<a href="' + s.url + '">' + s.label + '</a>';
+            });
+            html += ' \u00b7 <a href="#" onclick="TALK.open();return false">TALK</a>';
+            html += '<br><br>' + (tagline || 'CANONIC');
+        }
         el.innerHTML = html;
+    }
+
+    // ── THEME TOGGLE ─────────────────────────────────────
+    function initTheme() {
+        // Make toggleTheme global
+        if (typeof window.toggleTheme === 'undefined') {
+            window.getTheme = function () {
+                return localStorage.getItem('canonic-theme') || 'dark';
+            };
+            window.applyTheme = function (t) {
+                if (t === 'auto') {
+                    document.documentElement.removeAttribute('data-theme');
+                } else {
+                    document.documentElement.setAttribute('data-theme', t);
+                }
+                var btn = document.getElementById('theme-btn');
+                if (btn) btn.textContent = t === 'light' ? '\u2600' : t === 'dark' ? '\u263E' : '\u25D0';
+            };
+            window.toggleTheme = function () {
+                var order = ['auto', 'light', 'dark'];
+                var cur = window.getTheme();
+                var next = order[(order.indexOf(cur) + 1) % 3];
+                localStorage.setItem('canonic-theme', next);
+                window.applyTheme(next);
+            };
+            window.applyTheme(window.getTheme());
+        }
+    }
+
+    // ── UTIL: hex to rgb ─────────────────────────────────
+    function hexToRgb(hex) {
+        if (!hex || hex.charAt(0) !== '#') return '96,165,250';
+        hex = hex.replace('#', '');
+        if (hex.length === 3) hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+        var r = parseInt(hex.substring(0, 2), 16);
+        var g = parseInt(hex.substring(2, 4), 16);
+        var b = parseInt(hex.substring(4, 6), 16);
+        return r + ',' + g + ',' + b;
     }
 
     // ── INIT ──────────────────────────────────────────────
@@ -277,13 +597,17 @@ var RENDER = (function () {
             document.documentElement.setAttribute('data-scope', canon.scope.toLowerCase());
         }
 
+        // Theme toggle
+        initTheme();
+
         // Render from CONTENT.json
         if (content.fleet) renderEcoBar(content.fleet, canon.scope);
+        if (content.nav) renderNav(content.nav, canon.navIcon, canon.name);
         if (content.hero) renderHero(content.hero);
         if (content.stats) renderStats(content.stats);
         if (content.sections) renderSections(content.sections);
         if (content.cta) renderCTA(content.cta);
-        if (content.fleet) renderFooter(content.fleet, content.footerTagline);
+        if (content.fleet) renderFooter(content.fleet, content.footer, content.footerTagline);
     }
 
     return { init: init, canon: function () { return canon; }, content: function () { return content; } };

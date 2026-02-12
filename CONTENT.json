@@ -10,7 +10,13 @@
   "hero": {
     "title": "MAGIC",
     "subtitle": "Distribute work. Govern value.",
-    "description": "Three primitives. Infinite services. One governed economy. MAGIC is the operations layer \u2014 the platform that turns compliance into commerce and work into value."
+    "description": "Three primitives. Infinite services. One governed economy. MAGIC is the operations layer \u2014 the platform that turns compliance into commerce and work into value.",
+    "galaxy": {
+      "height": "70vh",
+      "hud": true,
+      "search": true,
+      "dock": true
+    }
   },
   "sections": [
     {
@@ -57,17 +63,15 @@
       }
     },
     {
-      "id": "galaxy",
+      "id": "galaxy-stats",
       "wrapClass": "galaxy",
-      "title": "The Galaxy",
-      "description": "Every organization joins the galaxy. Every contribution is validated. Tokenized GPU compute. Clinical services. Crowdsourced knowledge. Any backend, any frontend \u2014 all governed by the same protocol.",
       "galaxyStats": [
         { "value": "19", "label": "Organizations" },
         { "value": "185+", "label": "Projects" },
         { "value": "70+", "label": "Standards" },
         { "value": "\u221e", "label": "Services" }
       ],
-      "cta": { "label": "Explore the Galaxy \u2192", "href": "./MAGIC.html" }
+      "cta": { "label": "Full Screen Galaxy \u2192", "href": "./MAGIC.html" }
     },
     {
       "id": "tiers",
