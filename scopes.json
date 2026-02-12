@@ -1,0 +1,56 @@
+[
+  { "id": "FOUNDATION", "label": "FOUNDATION", "bits": 255, "size": 80, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "canonic-foundation", "inherits": null },
+  { "id": "MAGIC-ROOT", "label": "MAGIC", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-magic", "inherits": "FOUNDATION" },
+  { "id": "HADLEYLAB-ROOT", "label": "HADLEY LAB", "bits": 255, "size": 70, "color": "#60a5fa", "category": "SERVICES", "repo": "hadleylab-canonic", "inherits": "FOUNDATION" }
+,
+  { "id": "SECTORS", "label": "SECTORS", "bits": 127, "size": 60, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-foundation", "inherits": "FOUNDATION" }
+,
+  { "id": "SHOP", "label": "SHOP", "bits": 127, "size": 60, "color": "#ff9f0a", "category": "COMMERCE", "repo": "canonic-foundation", "inherits": "FOUNDATION" }
+,
+  { "id": "LANGUAGE", "label": "LANGUAGE", "bits": 127, "size": 60, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "canonic-foundation", "inherits": "FOUNDATION" }
+,
+  { "id": "IDIOMS", "label": "IDIOMS", "bits": 127, "size": 60, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "canonic-foundation", "inherits": "FOUNDATION" }
+,
+  { "id": "PROGRAMMING", "label": "PROGRAMMING", "bits": 127, "size": 60, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "canonic-foundation", "inherits": "FOUNDATION" }
+,
+  { "id": "GOVERNMENT", "label": "GOVERNMENT", "bits": 63, "size": 40, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-foundation", "inherits": "SECTORS" }
+,
+  { "id": "GENOMICS", "label": "GENOMICS", "bits": 63, "size": 40, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-foundation", "inherits": "SECTORS" }
+,
+  { "id": "EVIDENCE", "label": "EVIDENCE", "bits": 0, "size": 20, "color": "#64748b", "category": "ORG", "repo": "canonic-foundation", "inherits": "SECTORS" }
+,
+  { "id": "FRONTEND", "label": "FRONTEND", "bits": 0, "size": 20, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-foundation", "inherits": "SECTORS" }
+,
+  { "id": "QUALITY", "label": "QUALITY", "bits": 63, "size": 40, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-foundation", "inherits": "SECTORS" }
+,
+  { "id": "SECURITY", "label": "SECURITY", "bits": 63, "size": 40, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-foundation", "inherits": "SECTORS" }
+,
+  { "id": "LEARNING", "label": "LEARNING", "bits": 0, "size": 20, "color": "#64748b", "category": "ORG", "repo": "canonic-foundation", "inherits": "SECTORS" }
+,
+  { "id": "LAW", "label": "LAW", "bits": 63, "size": 40, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-foundation", "inherits": "SECTORS" }
+,
+  { "id": "EDUCATION", "label": "EDUCATION", "bits": 63, "size": 40, "color": "#ffd60a", "category": "KNOWLEDGE", "repo": "canonic-foundation", "inherits": "SECTORS" }
+,
+  { "id": "SAFETY", "label": "SAFETY", "bits": 63, "size": 40, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-foundation", "inherits": "SECTORS" }
+,
+  { "id": "BLOCKCHAIN", "label": "BLOCKCHAIN", "bits": 63, "size": 40, "color": "#ff9f0a", "category": "COMMERCE", "repo": "canonic-foundation", "inherits": "SECTORS" }
+,
+  { "id": "MEDICINE", "label": "MEDICINE", "bits": 63, "size": 40, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-foundation", "inherits": "SECTORS" }
+,
+  { "id": "CHRISTIANITY", "label": "CHRISTIANITY", "bits": 63, "size": 40, "color": "#ffd60a", "category": "KNOWLEDGE", "repo": "canonic-foundation", "inherits": "SECTORS" }
+,
+  { "id": "FINANCE", "label": "FINANCE", "bits": 63, "size": 40, "color": "#ff9f0a", "category": "COMMERCE", "repo": "canonic-foundation", "inherits": "SECTORS" }
+,
+  { "id": "DEFENSE", "label": "DEFENSE", "bits": 63, "size": 40, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-foundation", "inherits": "SECTORS" }
+,
+  { "id": "DATA", "label": "DATA", "bits": 63, "size": 40, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-foundation", "inherits": "SECTORS" }
+,
+  { "id": "MAGIC", "label": "MAGIC", "bits": 127, "size": 60, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-magic", "inherits": "MAGIC-ROOT" }
+,
+  { "id": "ORGS", "label": "ORGS", "bits": 127, "size": 60, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-magic", "inherits": "MAGIC-ROOT" }
+,
+  { "id": "VAULT", "label": "VAULT", "bits": 127, "size": 60, "color": "#ff9f0a", "category": "COMMERCE", "repo": "canonic-magic", "inherits": "MAGIC-ROOT" }
+,
+  { "id": "DEXTER", "label": "DEXTER", "bits": 127, "size": 60, "color": "#ec4899", "category": "SERVICES", "repo": "hadleylab-canonic", "inherits": "HADLEYLAB-ROOT" }
+
+]
