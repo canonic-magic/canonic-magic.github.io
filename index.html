@@ -116,24 +116,14 @@
 
         /* ═══ CTA ═══ */
         .cta { background: linear-gradient(135deg, rgba(0,255,136,0.08), rgba(0,0,0,0.3)); border: 1px solid rgba(0,255,136,0.2); text-align: center; border-radius: 16px; padding: 48px; }
-        [data-theme="light"] .cta { background: linear-gradient(135deg, rgba(0,255,136,0.06), rgba(0,0,0,0.02)); }
+        [data-theme="light"] .cta { background: rgba(0,255,136,0.04); border-color: rgba(0,255,136,0.12); }
+        @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .cta { background: rgba(0,255,136,0.04); border-color: rgba(0,255,136,0.12); } }
         .cta h3 { font-size: 28px; margin-bottom: 12px; color: var(--accent); }
         .cta p { color: var(--fg-secondary); margin-bottom: 24px; }
         .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
-        /* Floating SPA index */
-        .spa-index { position: fixed; right: 20px; top: 50%; transform: translateY(-50%); z-index: 999; display: flex; flex-direction: column; gap: 16px; align-items: flex-end; }
-        .spa-dot { display: flex; align-items: center; gap: 10px; text-decoration: none; cursor: pointer; }
-        .spa-dot-label { font-size: 11px; font-weight: 600; color: var(--fg-secondary); opacity: 0; transform: translateX(8px); transition: all 0.2s; white-space: nowrap; letter-spacing: 0.03em; }
-        .spa-dot:hover .spa-dot-label { opacity: 1; transform: translateX(0); }
-        .spa-dot-pip { width: 8px; height: 8px; border-radius: 50%; background: var(--fg-secondary); opacity: 0.3; transition: all 0.2s; flex-shrink: 0; }
-        .spa-dot:hover .spa-dot-pip { opacity: 0.7; }
-        .spa-dot.active .spa-dot-pip { opacity: 1; background: var(--accent); width: 10px; height: 10px; }
-        .spa-dot.active .spa-dot-label { opacity: 1; transform: translateX(0); color: var(--accent); }
-
         @media (max-width: 768px) {
             .galaxy-stats { grid-template-columns: repeat(2, 1fr); }
-            .spa-index { display: none; }
         }
     </style>
 </head>
@@ -148,15 +138,6 @@
             <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn" title="Toggle light/dark">&#9790;</button>
         </div>
     </div>
-
-    <nav class="spa-index">
-        <a href="#primitives" class="spa-dot" data-section="primitives"><span class="spa-dot-label">Primitives</span><span class="spa-dot-pip"></span></a>
-        <a href="#compositions" class="spa-dot" data-section="compositions"><span class="spa-dot-label">Services</span><span class="spa-dot-pip"></span></a>
-        <a href="#galaxy" class="spa-dot" data-section="galaxy"><span class="spa-dot-label">Galaxy</span><span class="spa-dot-pip"></span></a>
-        <a href="#tiers" class="spa-dot" data-section="tiers"><span class="spa-dot-label">Plans</span><span class="spa-dot-pip"></span></a>
-        <a href="#how" class="spa-dot" data-section="how"><span class="spa-dot-label">How</span><span class="spa-dot-pip"></span></a>
-        <a href="#communities" class="spa-dot" data-section="communities"><span class="spa-dot-label">Communities</span><span class="spa-dot-pip"></span></a>
-    </nav>
 
     <div class="container">
 
@@ -505,18 +486,6 @@
         }
         applyTheme(getTheme());
 
-        // SPA index scroll tracking
-        var dots = document.querySelectorAll('.spa-dot');
-        var observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    dots.forEach(function(d) { d.classList.remove('active'); });
-                    var dot = document.querySelector('.spa-dot[data-section="' + entry.target.id + '"]');
-                    if (dot) dot.classList.add('active');
-                }
-            });
-        }, { rootMargin: '-40% 0px -40% 0px' });
-        document.querySelectorAll('section[id]').forEach(function(s) { observer.observe(s); });
     </script>
 </body>
 </html>
