@@ -1315,10 +1315,12 @@ select {
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-[data-theme="light"] .eco-links a { color: #64748b; }
+[data-theme="light"] .eco-links a { color: var(--dim); }
 [data-theme="light"] .eco-links a:hover { color: var(--accent); }
-[data-theme="light"] .eco-links a.eco-active { color: #1a1a2e; }
-[data-theme="light"] .theme-toggle { border-color: #ccc; color: #64748b; }
+[data-theme="light"] .eco-links a.eco-active { color: var(--fg); }
+[data-theme="light"] .eco-talk { border-color: rgba(0, 200, 100, 0.3); background: rgba(0, 200, 100, 0.06); }
+[data-theme="light"] .eco-talk:hover { border-color: rgba(0, 200, 100, 0.5); background: rgba(0, 200, 100, 0.1); }
+[data-theme="light"] .theme-toggle { border-color: var(--border); color: var(--dim); }
 [data-theme="light"] .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
 
 [data-theme="light"] section {
