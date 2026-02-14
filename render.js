@@ -361,6 +361,21 @@ var RENDER = (function () {
                 html += '</div>';
             }
 
+            // Generated depth-2 content (compiled from GOV tree)
+            if (sec.generated && sec.generated.children && sec.generated.children.length) {
+                html += '<div style="margin-top:20px;padding:18px;border:1px solid var(--border);border-radius:12px;background:var(--bg-soft);">';
+                html += '<div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--fg-tertiary);margin-bottom:12px;">Depth 2 · Gov Derived</div>';
+                html += '<div style="display:flex;flex-wrap:wrap;gap:8px;">';
+                sec.generated.children.forEach(function (c) {
+                    html += '<span style="padding:6px 10px;border:1px solid rgba(var(--accent-rgb,59,130,246),0.28);border-radius:999px;font-size:11px;font-weight:600;color:var(--fg-secondary);background:rgba(var(--accent-rgb,59,130,246),0.08);">' + c.label + '</span>';
+                });
+                html += '</div>';
+                if (sec.generated.source) {
+                    html += '<div style="margin-top:10px;font-size:11px;color:var(--fg-tertiary);font-family:var(--mono);">source: ' + sec.generated.source + '</div>';
+                }
+                html += '</div>';
+            }
+
             if (sec.wrapClass) html += '</div>';
             el.innerHTML = html;
         });
