@@ -1,25 +1,67 @@
 {
   "fleet": {
-    "brand": { "mark": "\u2229", "label": "CANONIC", "url": "https://canonic-foundation.github.io" },
+    "brand": {
+      "mark": "\u2229",
+      "label": "CANONIC",
+      "url": "https://canonic-foundation.github.io"
+    },
     "sites": [
-      { "scope": "FOUNDATION", "label": "Foundation", "url": "https://canonic-foundation.github.io" },
-      { "scope": "MAGIC", "label": "MAGIC", "url": "https://canonic-magic.github.io" },
-      { "scope": "HADLEYLAB", "label": "Hadley Lab", "url": "https://hadleylab-dexter.github.io" }
+      {
+        "scope": "FOUNDATION",
+        "label": "Foundation",
+        "url": "https://canonic-foundation.github.io"
+      },
+      {
+        "scope": "INDUSTRIES",
+        "label": "Industries",
+        "url": "https://canonic-industries.github.io"
+      },
+      {
+        "scope": "MAGIC",
+        "label": "MAGIC",
+        "url": "https://canonic-magic.github.io"
+      },
+      {
+        "scope": "HADLEYLAB",
+        "label": "Hadley Lab",
+        "url": "https://hadleylab-dexter.github.io"
+      }
     ]
   },
   "nav": [
-    { "label": "Galaxy", "href": "#galaxy" },
-    { "label": "Primitives", "href": "#primitives" },
-    { "label": "Services", "href": "#compositions" },
-    { "label": "Pricing", "href": "#tiers" }
+    {
+      "label": "Galaxy",
+      "href": "#galaxy"
+    },
+    {
+      "label": "Primitives",
+      "href": "#primitives"
+    },
+    {
+      "label": "Services",
+      "href": "#compositions"
+    },
+    {
+      "label": "Pricing",
+      "href": "#tiers"
+    }
   ],
   "hero": {
     "badge": "BY CANON",
     "title": "The Future of <span class=\"accent\">Work.</span>",
     "description": "Every regulated industry pays consultants to check boxes. We replaced the consultant with a specification. One framework. 80+ compliance standards. Validated automatically. Your team ships product instead of paperwork. Coin equals work. Work equals value. That\u2019s MAGIC.",
     "cta": [
-      { "label": "Try TALK", "href": "#", "class": "btn-green", "talk": true },
-      { "label": "See How It Works", "href": "#primitives", "class": "btn-secondary" }
+      {
+        "label": "Try TALK",
+        "href": "#",
+        "class": "btn-green",
+        "talk": true
+      },
+      {
+        "label": "See How It Works",
+        "href": "#primitives",
+        "class": "btn-secondary"
+      }
     ]
   },
   "sections": [
@@ -37,7 +79,13 @@
           "class": "axiom-block",
           "title": "Coin = Work",
           "text": "In the CANONIC economy, every coin is backed by validated work. Not speculation. Not sentiment. Work. You contribute, the system validates, you earn. Value flows from what you build, not what you trade.",
-          "flow": ["Work", "Validate", "Coin", "Distribute", "Commerce"]
+          "flow": [
+            "Work",
+            "Validate",
+            "Coin",
+            "Distribute",
+            "Commerce"
+          ]
         }
       ]
     },
@@ -64,12 +112,27 @@
       "id": "galaxy-stats",
       "wrapClass": "galaxy",
       "galaxyStats": [
-        { "value": "21+", "label": "Organizations" },
-        { "value": "250+", "label": "Projects" },
-        { "value": "80+", "label": "Standards" },
-        { "value": "21", "label": "Domains" }
+        {
+          "value": "21+",
+          "label": "Organizations"
+        },
+        {
+          "value": "250+",
+          "label": "Projects"
+        },
+        {
+          "value": "80+",
+          "label": "Standards"
+        },
+        {
+          "value": "21",
+          "label": "Domains"
+        }
       ],
-      "cta": { "label": "Full Screen Galaxy \u2192", "href": "./MAGIC.html" }
+      "cta": {
+        "label": "Full Screen Galaxy \u2192",
+        "href": "./MAGIC.html"
+      }
     },
     {
       "id": "primitives",
@@ -80,35 +143,62 @@
         {
           "class": "primitive-card",
           "icon": "\ud83e\udde0",
-          "iconGradient": ["#bf5af2", "#a78bfa"],
+          "iconGradient": [
+            "#bf5af2",
+            "#a78bfa"
+          ],
           "title": "INTEL",
           "titleColor": "#bf5af2",
           "subtitle": "What you KNOW",
           "text": "The intelligence layer. It reads, validates, and learns. Galaxy compliance, ledger integrity, transcript chains, people graphs \u2014 six agents. One orchestrator. Every service starts with knowledge.",
-          "badge": { "label": "Knowledge", "color": "#bf5af2" },
+          "badge": {
+            "label": "Knowledge",
+            "color": "#bf5af2"
+          },
           "statusBadge": "LIVE"
         },
         {
           "class": "primitive-card",
           "icon": "\ud83d\udcac",
-          "iconGradient": ["#ec4899", "#f472b6"],
+          "iconGradient": [
+            "#ec4899",
+            "#f472b6"
+          ],
           "title": "CHAT",
           "titleColor": "#ec4899",
           "subtitle": "What you SAY",
           "text": "Domain-specific interfaces grounded in evidence. Healthcare, legal, finance \u2014 each speaks its own language. TALK is the service. Industry is the only variable. Same architecture, different vocabulary.",
-          "badge": { "label": "Services", "color": "#ec4899" },
-          "cta": { "label": "Try TALK", "href": "#", "class": "btn-pink", "talk": true }
+          "badge": {
+            "label": "Services",
+            "color": "#ec4899"
+          },
+          "cta": {
+            "label": "Try TALK",
+            "href": "#",
+            "class": "btn-pink",
+            "talk": true
+          }
         },
         {
           "class": "primitive-card",
           "icon": "\ud83d\udcb0",
-          "iconGradient": ["#ff9f0a", "#fbbf24"],
+          "iconGradient": [
+            "#ff9f0a",
+            "#fbbf24"
+          ],
           "title": "COIN",
           "titleColor": "#ff9f0a",
           "subtitle": "What you DO",
           "text": "The value layer. Every unit of work is validated and compensated. Coin equals work. No speculation. Contribute compute. Crowdsource knowledge. Build together. Get paid for real work.",
-          "badge": { "label": "Commerce", "color": "#ff9f0a" },
-          "cta": { "label": "View Plans", "href": "#tiers", "class": "btn-gold" }
+          "badge": {
+            "label": "Commerce",
+            "color": "#ff9f0a"
+          },
+          "cta": {
+            "label": "View Plans",
+            "href": "#tiers",
+            "class": "btn-gold"
+          }
         }
       ],
       "banner": {
@@ -116,9 +206,18 @@
         "title": "255 = Full Compliance = MAGIC",
         "text": "Eight compliance checks. Score 0\u2013255. When all pass, your project reaches full compliance. That\u2019s MAGIC.",
         "badges": [
-          { "label": "INTEL", "color": "#bf5af2" },
-          { "label": "CHAT", "color": "#ec4899" },
-          { "label": "COIN", "color": "#ff9f0a" }
+          {
+            "label": "INTEL",
+            "color": "#bf5af2"
+          },
+          {
+            "label": "CHAT",
+            "color": "#ec4899"
+          },
+          {
+            "label": "COIN",
+            "color": "#ff9f0a"
+          }
         ]
       }
     },
@@ -128,13 +227,37 @@
       "eyebrow": "HOW SERVICES WORK",
       "description": "Primitives combine into services. Each combination unlocks new capabilities. Industry is the only variable \u2014 the architecture stays the same.",
       "table": {
-        "headers": ["Service", "Built From", "What It Does"],
-        "cellClasses": [null, "formula", "desc"],
+        "headers": [
+          "Service",
+          "Built From",
+          "What It Does"
+        ],
+        "cellClasses": [
+          null,
+          "formula",
+          "desc"
+        ],
         "rows": [
-          ["\ud83d\udcac TALK", "CHAT + INTEL", "Intelligent conversation grounded in knowledge"],
-          ["\ud83d\udd12 VAULT", "COIN + INTEL", "Secure storage with governed access"],
-          ["\ud83d\uded2 SHOP", "COIN + INTEL + CHAT", "Commerce with intelligence and interface"],
-          ["\ud83e\udd16 AGENT", "INTEL + CHAT + COIN", "All three primitives. Full autonomy."]
+          [
+            "\ud83d\udcac TALK",
+            "CHAT + INTEL",
+            "Intelligent conversation grounded in knowledge"
+          ],
+          [
+            "\ud83d\udd12 VAULT",
+            "COIN + INTEL",
+            "Secure storage with governed access"
+          ],
+          [
+            "\ud83d\uded2 SHOP",
+            "COIN + INTEL + CHAT",
+            "Commerce with intelligence and interface"
+          ],
+          [
+            "\ud83e\udd16 AGENT",
+            "INTEL + CHAT + COIN",
+            "All three primitives. Full autonomy."
+          ]
         ]
       }
     },
@@ -147,7 +270,10 @@
         {
           "class": "primitive-card",
           "icon": "\ud83c\udfe2",
-          "iconGradient": ["#00ff88", "#2997ff"],
+          "iconGradient": [
+            "#00ff88",
+            "#2997ff"
+          ],
           "title": "Join",
           "titleColor": "#00ff88",
           "subtitle": "Bring your org",
@@ -156,7 +282,10 @@
         {
           "class": "primitive-card",
           "icon": "\ud83e\udded",
-          "iconGradient": ["#bf5af2", "#a78bfa"],
+          "iconGradient": [
+            "#bf5af2",
+            "#a78bfa"
+          ],
           "title": "Validate",
           "titleColor": "#bf5af2",
           "subtitle": "8 dimensions",
@@ -165,7 +294,10 @@
         {
           "class": "primitive-card",
           "icon": "\ud83c\udfaf",
-          "iconGradient": ["#2997ff", "#60a5fa"],
+          "iconGradient": [
+            "#2997ff",
+            "#60a5fa"
+          ],
           "title": "Comply",
           "titleColor": "#2997ff",
           "subtitle": "Earn your tier",
@@ -174,7 +306,10 @@
         {
           "class": "primitive-card",
           "icon": "\ud83d\udcb0",
-          "iconGradient": ["#ff9f0a", "#fbbf24"],
+          "iconGradient": [
+            "#ff9f0a",
+            "#fbbf24"
+          ],
           "title": "Earn",
           "titleColor": "#ff9f0a",
           "subtitle": "Coin = Work",
@@ -188,10 +323,62 @@
       "eyebrow": "PRICING",
       "description": "Start free. Scale when you\u2019re ready. Every tier earns through work.",
       "tiers": [
-        { "name": "Community", "price": "Free", "sub": "Forever", "features": ["Full platform access", "Learning communities", "Earn through work", "Open governance"], "ctaLabel": "Get Started", "ctaHref": "#", "ctaTalk": true },
-        { "name": "Business", "price": "$100", "sub": "per year", "featured": true, "features": ["Private workspace", "Listed in the marketplace", "Automated compliance", "Commercial licensing", "5% platform fee"], "ctaLabel": "Subscribe", "ctaHref": "https://hadleylab-dexter.github.io/DEAL/" },
-        { "name": "Enterprise", "price": "Contract", "sub": "Tailored governance", "features": ["Dedicated validation", "Foundation-certified", "Custom compliance", "Full treasury access", "10% platform fee"], "ctaLabel": "Contact", "ctaHref": "https://hadleylab-dexter.github.io/DEAL/" },
-        { "name": "Foundation", "price": "Free", "sub": "Nonprofits", "features": ["Enterprise-grade tools", "Full governance", "Open infrastructure", "No cost. Ever."], "ctaLabel": "Apply", "ctaHref": "https://hadleylab-dexter.github.io/CHAT/MEDCHAT/" }
+        {
+          "name": "Community",
+          "price": "Free",
+          "sub": "Forever",
+          "features": [
+            "Full platform access",
+            "Learning communities",
+            "Earn through work",
+            "Open governance"
+          ],
+          "ctaLabel": "Get Started",
+          "ctaHref": "#",
+          "ctaTalk": true
+        },
+        {
+          "name": "Business",
+          "price": "$100",
+          "sub": "per year",
+          "featured": true,
+          "features": [
+            "Private workspace",
+            "Listed in the marketplace",
+            "Automated compliance",
+            "Commercial licensing",
+            "5% platform fee"
+          ],
+          "ctaLabel": "Subscribe",
+          "ctaHref": "https://hadleylab-dexter.github.io/DEAL/"
+        },
+        {
+          "name": "Enterprise",
+          "price": "Contract",
+          "sub": "Tailored governance",
+          "features": [
+            "Dedicated validation",
+            "Foundation-certified",
+            "Custom compliance",
+            "Full treasury access",
+            "10% platform fee"
+          ],
+          "ctaLabel": "Contact",
+          "ctaHref": "https://hadleylab-dexter.github.io/DEAL/"
+        },
+        {
+          "name": "Foundation",
+          "price": "Free",
+          "sub": "Nonprofits",
+          "features": [
+            "Enterprise-grade tools",
+            "Full governance",
+            "Open infrastructure",
+            "No cost. Ever."
+          ],
+          "ctaLabel": "Apply",
+          "ctaHref": "https://hadleylab-dexter.github.io/CHAT/MEDCHAT/"
+        }
       ],
       "axiom": "Nonprofits get enterprise for free. That\u2019s not charity. That\u2019s architecture."
     },
@@ -204,32 +391,50 @@
         {
           "class": "primitive-card",
           "icon": "\ud83e\uddec",
-          "iconGradient": ["#ec4899", "#f472b6"],
+          "iconGradient": [
+            "#ec4899",
+            "#f472b6"
+          ],
           "title": "Healthcare",
           "titleColor": "#ec4899",
           "subtitle": "Clinical AI",
           "text": "Radiologists training models. Oncologists validating protocols. Clinicians building the future of medicine \u2014 together.",
-          "badge": { "label": "LIVE", "color": "#ec4899" }
+          "badge": {
+            "label": "LIVE",
+            "color": "#ec4899"
+          }
         },
         {
           "class": "primitive-card",
           "icon": "\u26a1",
-          "iconGradient": ["#ff9f0a", "#fbbf24"],
+          "iconGradient": [
+            "#ff9f0a",
+            "#fbbf24"
+          ],
           "title": "Compute",
           "titleColor": "#ff9f0a",
           "subtitle": "Tokenized GPU",
           "text": "Contribute compute. Train models. Run inference. Every GPU cycle is validated work. Every cycle earns.",
-          "badge": { "label": "COMING SOON", "color": "#ff9f0a" }
+          "badge": {
+            "label": "COMING SOON",
+            "color": "#ff9f0a"
+          }
         },
         {
           "class": "primitive-card",
           "icon": "\ud83d\udcda",
-          "iconGradient": ["#bf5af2", "#a78bfa"],
+          "iconGradient": [
+            "#bf5af2",
+            "#a78bfa"
+          ],
           "title": "Knowledge",
           "titleColor": "#bf5af2",
           "subtitle": "Crowdsourced Intelligence",
           "text": "Experts annotating data. Teams curating knowledge. Communities teaching machines \u2014 and each other.",
-          "badge": { "label": "BETA", "color": "#bf5af2" }
+          "badge": {
+            "label": "BETA",
+            "color": "#bf5af2"
+          }
         }
       ]
     },
@@ -239,13 +444,37 @@
       "eyebrow": "WHAT\u2019S AVAILABLE",
       "description": "Every governed application, discoverable in one place. Built by communities. Validated by the protocol.",
       "table": {
-        "headers": ["Category", "Applications", "Access"],
-        "cellClasses": [null, "desc", "formula"],
+        "headers": [
+          "Category",
+          "Applications",
+          "Access"
+        ],
+        "cellClasses": [
+          null,
+          "desc",
+          "formula"
+        ],
         "rows": [
-          ["\ud83d\udd27 Platform", "Agent, Knowledge, Evolution", "Free"],
-          ["\ud83d\udcbc Productivity", "Email, Calendar, Social, Analytics", "Business"],
-          ["\ud83c\udfe5 Specialist", "MammoChat, PsychChat, Genomics, InvestorChat", "Enterprise"],
-          ["\ud83c\udfed Industries", "Robotics, Automotive, Aerospace, Manufacturing, Energy, Logistics, Agriculture, Education", "Enterprise"]
+          [
+            "\ud83d\udd27 Platform",
+            "Agent, Knowledge, Evolution",
+            "Free"
+          ],
+          [
+            "\ud83d\udcbc Productivity",
+            "Email, Calendar, Social, Analytics",
+            "Business"
+          ],
+          [
+            "\ud83c\udfe5 Specialist",
+            "MammoChat, PsychChat, Genomics, InvestorChat",
+            "Enterprise"
+          ],
+          [
+            "\ud83c\udfed Industries",
+            "Robotics, Automotive, Aerospace, Manufacturing, Energy, Logistics, Agriculture, Education",
+            "Enterprise"
+          ]
         ]
       }
     }
@@ -255,17 +484,39 @@
     "title": "Build the Future",
     "description": "Join the galaxy. Distribute work. Earn through contribution. Three primitives. Infinite services. It\u2019s MAGIC.",
     "buttons": [
-      { "label": "Start for Free", "href": "#", "talk": true },
-      { "label": "View Plans", "href": "#tiers" },
-      { "label": "Explore Galaxy", "href": "#galaxy" }
+      {
+        "label": "Start for Free",
+        "href": "#",
+        "talk": true
+      },
+      {
+        "label": "View Plans",
+        "href": "#tiers"
+      },
+      {
+        "label": "Explore Galaxy",
+        "href": "#galaxy"
+      }
     ]
   },
   "footer": {
     "links": [
-      { "label": "Galaxy", "href": "./MAGIC.html" },
-      { "label": "Foundation", "href": "https://canonic-foundation.github.io" },
-      { "label": "Hadley Lab", "href": "https://hadleylab-dexter.github.io" },
-      { "label": "GitHub", "href": "https://github.com/canonic-magic" }
+      {
+        "label": "Galaxy",
+        "href": "./MAGIC.html"
+      },
+      {
+        "label": "Foundation",
+        "href": "https://canonic-foundation.github.io"
+      },
+      {
+        "label": "Hadley Lab",
+        "href": "https://hadleylab-dexter.github.io"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/canonic-magic"
+      }
     ],
     "tagline": "MAGIC | Distribute Work. Govern Value. | CANONIC"
   }

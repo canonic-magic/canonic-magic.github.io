@@ -1,138 +1,1212 @@
 [
-  { "id": "FOUNDATION", "label": "FOUNDATION", "bits": 255, "size": 80, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "canonic-canonic", "inherits": null },
-  { "id": "MAGIC-ROOT", "label": "MAGIC", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "FOUNDATION" },
-  { "id": "HADLEYLAB-ROOT", "label": "HADLEY LAB", "bits": 255, "size": 70, "color": "#60a5fa", "category": "SERVICES", "repo": "hadleylab-canonic", "inherits": "FOUNDATION" }
-,
-  { "id": "MAGIC", "label": "MAGIC", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "FOUNDATION" }
-,
-  { "id": "INDUSTRIES", "label": "INDUSTRIES", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "FOUNDATION" }
-,
-  { "id": "FOUNDATION", "label": "FOUNDATION", "bits": 255, "size": 80, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "canonic-canonic", "inherits": "FOUNDATION" }
-,
-  { "id": "SHOP", "label": "SHOP", "bits": 255, "size": 80, "color": "#ff9f0a", "category": "COMMERCE", "repo": "canonic-canonic", "inherits": "FOUNDATION" }
-,
-  { "id": "PROGRAMMING", "label": "PROGRAMMING", "bits": 255, "size": 80, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "canonic-canonic", "inherits": "FOUNDATION" }
-,
-  { "id": "BLOG", "label": "BLOG", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "canonic-canonic", "inherits": "SHOP" }
-,
-  { "id": "RESERVES", "label": "RESERVES", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "canonic-canonic", "inherits": "SHOP" }
-,
-  { "id": "SALES", "label": "SALES", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "MAGIC-ROOT" }
-,
-  { "id": "DISTRIBUTED", "label": "DISTRIBUTED", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "canonic-canonic", "inherits": "MAGIC-ROOT" }
-,
-  { "id": "ORGS", "label": "ORGS", "bits": 255, "size": 80, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-canonic", "inherits": "MAGIC-ROOT" }
-,
-  { "id": "MARKET", "label": "MARKET", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "MAGIC-ROOT" }
-,
-  { "id": "GTM", "label": "GTM", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "MAGIC-ROOT" }
-,
-  { "id": "VAULT", "label": "VAULT", "bits": 255, "size": 80, "color": "#ff9f0a", "category": "COMMERCE", "repo": "canonic-canonic", "inherits": "MAGIC-ROOT" }
-,
-  { "id": "TOOLCHAIN", "label": "TOOLCHAIN", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "MAGIC-ROOT" }
-,
-  { "id": "HORIZONTAL", "label": "HORIZONTAL", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "INDUSTRIES" }
-,
-  { "id": "META", "label": "META", "bits": 255, "size": 80, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "canonic-canonic", "inherits": "INDUSTRIES" }
-,
-  { "id": "REGULATORY", "label": "REGULATORY", "bits": 255, "size": 80, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-canonic", "inherits": "INDUSTRIES" }
-,
-  { "id": "VERTICALS", "label": "VERTICALS", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "INDUSTRIES" }
-,
-  { "id": "AGRICULTURE", "label": "AGRICULTURE", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
-,
-  { "id": "GENOMICS", "label": "GENOMICS", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
-,
-  { "id": "QUALITY", "label": "QUALITY", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
-,
-  { "id": "ENERGY", "label": "ENERGY", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
-,
-  { "id": "ROBOTICS", "label": "ROBOTICS", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
-,
-  { "id": "EDUCATION", "label": "EDUCATION", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
-,
-  { "id": "AUTOMOTIVE", "label": "AUTOMOTIVE", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
-,
-  { "id": "MANUFACTURING", "label": "MANUFACTURING", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
-,
-  { "id": "RELIGION", "label": "RELIGION", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
-,
-  { "id": "MEDICINE", "label": "MEDICINE", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
-,
-  { "id": "FINANCE", "label": "FINANCE", "bits": 255, "size": 80, "color": "#ff9f0a", "category": "COMMERCE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
-,
-  { "id": "AEROSPACE", "label": "AEROSPACE", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
-,
-  { "id": "DEFENSE", "label": "DEFENSE", "bits": 255, "size": 80, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-canonic", "inherits": "VERTICALS" }
-,
-  { "id": "LOGISTICS", "label": "LOGISTICS", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
-,
-  { "id": "GOVERNMENT", "label": "GOVERNMENT", "bits": 255, "size": 80, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-canonic", "inherits": "REGULATORY" }
-,
-  { "id": "LAW", "label": "LAW", "bits": 255, "size": 80, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-canonic", "inherits": "REGULATORY" }
-,
-  { "id": "BLOCKCHAIN", "label": "BLOCKCHAIN", "bits": 255, "size": 80, "color": "#ff9f0a", "category": "COMMERCE", "repo": "canonic-canonic", "inherits": "REGULATORY" }
-,
-  { "id": "DATA", "label": "DATA", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "REGULATORY" }
-,
-  { "id": "SECURITY", "label": "SECURITY", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "HORIZONTAL" }
-,
-  { "id": "SAFETY", "label": "SAFETY", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "HORIZONTAL" }
-,
-  { "id": "PATENT", "label": "PATENT", "bits": 255, "size": 80, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-canonic", "inherits": "LAW" }
-,
-  { "id": "DEXTER", "label": "DEXTER", "bits": 255, "size": 80, "color": "#ec4899", "category": "SERVICES", "repo": "hadleylab-canonic", "inherits": "HADLEYLAB-ROOT" }
-,
-  { "id": "SHOP", "label": "SHOP", "bits": 191, "size": 60, "color": "#ff9f0a", "category": "COMMERCE", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
-,
-  { "id": "DECKS", "label": "DECKS", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
-,
-  { "id": "SERVICES", "label": "SERVICES", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
-,
-  { "id": "VAULT", "label": "VAULT", "bits": 255, "size": 80, "color": "#ff9f0a", "category": "COMMERCE", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
-,
-  { "id": "MAGIC", "label": "MAGIC", "bits": 191, "size": 60, "color": "#00ff88", "category": "RUNTIME", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
-,
-  { "id": "HEALTH", "label": "HEALTH", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
-,
-  { "id": "FOUNDATION", "label": "FOUNDATION", "bits": 191, "size": 60, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
-,
-  { "id": "PLAYBOOKS", "label": "PLAYBOOKS", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
-,
-  { "id": "GENERATOR", "label": "GENERATOR", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
-,
-  { "id": "TALK", "label": "TALK", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
-,
-  { "id": "MAMMOCHAT", "label": "MAMMOCHAT", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "TALK" }
-,
-  { "id": "LAWCHAT", "label": "LAWCHAT", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "TALK" }
-,
-  { "id": "ONCOCHAT", "label": "ONCOCHAT", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "TALK" }
-,
-  { "id": "MEDCHAT", "label": "MEDCHAT", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "TALK" }
-,
-  { "id": "FINCHAT", "label": "FINCHAT", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "TALK" }
-,
-  { "id": "PAPER", "label": "PAPER", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
-,
-  { "id": "WORK-TALK", "label": "WORK-TALK", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
-,
-  { "id": "CHAT", "label": "CHAT", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
-,
-  { "id": "BLOG", "label": "BLOG", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
-,
-  { "id": "BOOK", "label": "BOOK", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
-,
-  { "id": "INTEL", "label": "INTEL", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "VAULT" }
-,
-  { "id": "FINANCIALS", "label": "FINANCIALS", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "VAULT" }
-,
-  { "id": "PATENTS", "label": "PATENTS", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "VAULT" }
-,
-  { "id": "LEARNING", "label": "LEARNING", "bits": 255, "size": 80, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "hadleylab-canonic", "inherits": "VAULT" }
-,
-  { "id": "FORECASTS", "label": "FORECASTS", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "VAULT" }
-,
-  { "id": "RESERVES", "label": "RESERVES", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "VAULT" }
-
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:FOUNDATION",
+    "label": "FOUNDATION",
+    "bits": 255,
+    "size": 80,
+    "color": "#ffd60a",
+    "category": "GOVERNANCE",
+    "inherits": "gov:canonic-canonic:."
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:FOUNDATION:PROGRAMMING",
+    "label": "PROGRAMMING",
+    "bits": 255,
+    "size": 80,
+    "color": "#ffd60a",
+    "category": "GOVERNANCE",
+    "inherits": "gov:canonic-canonic:FOUNDATION"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:c",
+    "label": "C",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:FOUNDATION:PROGRAMMING"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:c:EVIDENCE",
+    "label": "EVIDENCE",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:c"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:python",
+    "label": "PYTHON",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:FOUNDATION:PROGRAMMING"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:python:EVIDENCE",
+    "label": "EVIDENCE",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:python"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:swift",
+    "label": "SWIFT",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:FOUNDATION:PROGRAMMING"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:swift:EVIDENCE",
+    "label": "EVIDENCE",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:swift"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:typescript",
+    "label": "TYPESCRIPT",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:FOUNDATION:PROGRAMMING"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:typescript:EVIDENCE",
+    "label": "EVIDENCE",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:typescript"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:FOUNDATION:SHOP",
+    "label": "SHOP",
+    "bits": 255,
+    "size": 80,
+    "color": "#ff9f0a",
+    "category": "COMMERCE",
+    "inherits": "gov:canonic-canonic:FOUNDATION"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:FOUNDATION:SHOP:BLOG",
+    "label": "BLOG",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:FOUNDATION:SHOP"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:FOUNDATION:SHOP:RESERVES",
+    "label": "RESERVES",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:FOUNDATION:SHOP"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES",
+    "label": "INDUSTRIES",
+    "bits": 255,
+    "size": 80,
+    "color": "#bf5af2",
+    "category": "KNOWLEDGE",
+    "inherits": "gov:canonic-canonic:."
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:HORIZONTAL",
+    "label": "HORIZONTAL",
+    "bits": 255,
+    "size": 80,
+    "color": "#bf5af2",
+    "category": "KNOWLEDGE",
+    "inherits": "gov:canonic-canonic:INDUSTRIES"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:HORIZONTAL:SAFETY",
+    "label": "SAFETY",
+    "bits": 255,
+    "size": 80,
+    "color": "#2997ff",
+    "category": "OPERATIONS",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:HORIZONTAL"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:HORIZONTAL:SECURITY",
+    "label": "SECURITY",
+    "bits": 255,
+    "size": 80,
+    "color": "#2997ff",
+    "category": "OPERATIONS",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:HORIZONTAL"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:META",
+    "label": "META",
+    "bits": 255,
+    "size": 80,
+    "color": "#bf5af2",
+    "category": "KNOWLEDGE",
+    "inherits": "gov:canonic-canonic:INDUSTRIES"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:REGULATORY",
+    "label": "REGULATORY",
+    "bits": 255,
+    "size": 80,
+    "color": "#bf5af2",
+    "category": "KNOWLEDGE",
+    "inherits": "gov:canonic-canonic:INDUSTRIES"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:REGULATORY:BLOCKCHAIN",
+    "label": "BLOCKCHAIN",
+    "bits": 255,
+    "size": 80,
+    "color": "#2997ff",
+    "category": "OPERATIONS",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:REGULATORY"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:REGULATORY:DATA",
+    "label": "DATA",
+    "bits": 255,
+    "size": 80,
+    "color": "#2997ff",
+    "category": "OPERATIONS",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:REGULATORY"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:REGULATORY:GOVERNMENT",
+    "label": "GOVERNMENT",
+    "bits": 255,
+    "size": 80,
+    "color": "#2997ff",
+    "category": "OPERATIONS",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:REGULATORY"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:REGULATORY:LAW",
+    "label": "LAW",
+    "bits": 255,
+    "size": 80,
+    "color": "#2997ff",
+    "category": "OPERATIONS",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:REGULATORY"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:REGULATORY:LAW:PATENT",
+    "label": "PATENT",
+    "bits": 255,
+    "size": 80,
+    "color": "#2997ff",
+    "category": "OPERATIONS",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:REGULATORY:LAW"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS",
+    "label": "VERTICALS",
+    "bits": 255,
+    "size": 80,
+    "color": "#bf5af2",
+    "category": "KNOWLEDGE",
+    "inherits": "gov:canonic-canonic:INDUSTRIES"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:AEROSPACE",
+    "label": "AEROSPACE",
+    "bits": 255,
+    "size": 80,
+    "color": "#bf5af2",
+    "category": "KNOWLEDGE",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:AGRICULTURE",
+    "label": "AGRICULTURE",
+    "bits": 255,
+    "size": 80,
+    "color": "#bf5af2",
+    "category": "KNOWLEDGE",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:AUTOMOTIVE",
+    "label": "AUTOMOTIVE",
+    "bits": 255,
+    "size": 80,
+    "color": "#bf5af2",
+    "category": "KNOWLEDGE",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:DEFENSE",
+    "label": "DEFENSE",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:EDUCATION",
+    "label": "EDUCATION",
+    "bits": 255,
+    "size": 80,
+    "color": "#bf5af2",
+    "category": "KNOWLEDGE",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:ENERGY",
+    "label": "ENERGY",
+    "bits": 255,
+    "size": 80,
+    "color": "#bf5af2",
+    "category": "KNOWLEDGE",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:FINANCE",
+    "label": "FINANCE",
+    "bits": 255,
+    "size": 80,
+    "color": "#ff9f0a",
+    "category": "COMMERCE",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:GENOMICS",
+    "label": "GENOMICS",
+    "bits": 255,
+    "size": 80,
+    "color": "#bf5af2",
+    "category": "KNOWLEDGE",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:LOGISTICS",
+    "label": "LOGISTICS",
+    "bits": 255,
+    "size": 80,
+    "color": "#bf5af2",
+    "category": "KNOWLEDGE",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:MANUFACTURING",
+    "label": "MANUFACTURING",
+    "bits": 255,
+    "size": 80,
+    "color": "#bf5af2",
+    "category": "KNOWLEDGE",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:MEDICINE",
+    "label": "MEDICINE",
+    "bits": 255,
+    "size": 80,
+    "color": "#bf5af2",
+    "category": "KNOWLEDGE",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:MEDICINE:credentialing",
+    "label": "CREDENTIALING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:MEDICINE"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:MEDICINE:oncology",
+    "label": "ONCOLOGY",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:MEDICINE"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:MEDICINE:oncology:breast",
+    "label": "BREAST",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:MEDICINE:oncology"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:MEDICINE:psychiatry",
+    "label": "PSYCHIATRY",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:MEDICINE"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:QUALITY",
+    "label": "QUALITY",
+    "bits": 255,
+    "size": 80,
+    "color": "#bf5af2",
+    "category": "KNOWLEDGE",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION",
+    "label": "RELIGION",
+    "bits": 255,
+    "size": 80,
+    "color": "#bf5af2",
+    "category": "KNOWLEDGE",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:buddhism",
+    "label": "BUDDHISM",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:christianity",
+    "label": "CHRISTIANITY",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:christianity:adventist:sda",
+    "label": "SDA",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:christianity:adventist"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:christianity:ancient",
+    "label": "ANCIENT",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:christianity"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:christianity:catholic",
+    "label": "CATHOLIC",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:christianity"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:christianity:orthodox",
+    "label": "ORTHODOX",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:christianity"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:christianity:protestant",
+    "label": "PROTESTANT",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:christianity"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:hinduism",
+    "label": "HINDUISM",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:islam",
+    "label": "ISLAM",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:islam:nation-of-islam",
+    "label": "NATION-OF-ISLAM",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:islam"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:islam:shia",
+    "label": "SHIA",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:islam"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:islam:sunni",
+    "label": "SUNNI",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:islam"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:judaism",
+    "label": "JUDAISM",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:sikhism",
+    "label": "SIKHISM",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:ROBOTICS",
+    "label": "ROBOTICS",
+    "bits": 255,
+    "size": 80,
+    "color": "#bf5af2",
+    "category": "KNOWLEDGE",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:MAGIC",
+    "label": "MAGIC",
+    "bits": 255,
+    "size": 80,
+    "color": "#00ff88",
+    "category": "RUNTIME",
+    "inherits": "gov:canonic-canonic:."
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:MAGIC:DISTRIBUTED",
+    "label": "DISTRIBUTED",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:MAGIC"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:MAGIC:GTM",
+    "label": "GTM",
+    "bits": 255,
+    "size": 80,
+    "color": "#00ff88",
+    "category": "RUNTIME",
+    "inherits": "gov:canonic-canonic:MAGIC"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:MAGIC:MARKET",
+    "label": "MARKET",
+    "bits": 255,
+    "size": 80,
+    "color": "#00ff88",
+    "category": "RUNTIME",
+    "inherits": "gov:canonic-canonic:MAGIC"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:MAGIC:ORGS",
+    "label": "ORGS",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:MAGIC"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:MAGIC:SALES",
+    "label": "SALES",
+    "bits": 255,
+    "size": 80,
+    "color": "#00ff88",
+    "category": "RUNTIME",
+    "inherits": "gov:canonic-canonic:MAGIC"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:MAGIC:TOOLCHAIN",
+    "label": "TOOLCHAIN",
+    "bits": 255,
+    "size": 80,
+    "color": "#00ff88",
+    "category": "RUNTIME",
+    "inherits": "gov:canonic-canonic:MAGIC"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:MAGIC:VAULT",
+    "label": "VAULT",
+    "bits": 255,
+    "size": 80,
+    "color": "#ff9f0a",
+    "category": "COMMERCE",
+    "inherits": "gov:canonic-canonic:MAGIC"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:.",
+    "label": "HADLEYLAB-CANONIC",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": null
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER",
+    "label": "DEXTER",
+    "bits": 255,
+    "size": 80,
+    "color": "#ec4899",
+    "category": "SERVICES",
+    "inherits": "gov:hadleylab-canonic:."
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:DECKS",
+    "label": "DECKS",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:DECKS:DECK",
+    "label": "DECK",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:DECKS"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:DECKS:HOWARD",
+    "label": "HOWARD",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:DECKS"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:DECKS:MALEK",
+    "label": "MALEK",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:DECKS"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:DECKS:PMWC",
+    "label": "PMWC",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:DECKS"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:SERVICES",
+    "label": "SERVICES",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:SERVICES:FOUNDATION",
+    "label": "FOUNDATION",
+    "bits": 191,
+    "size": 60,
+    "color": "#ffd60a",
+    "category": "GOVERNANCE",
+    "inherits": "gov:hadleylab-canonic:DEXTER:SERVICES"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:SERVICES:GENERATOR",
+    "label": "GENERATOR",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:SERVICES"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:SERVICES:GENERATOR:DEAL",
+    "label": "DEAL",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:SERVICES:GENERATOR"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:SERVICES:HEALTH",
+    "label": "HEALTH",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:SERVICES"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:SERVICES:MAGIC",
+    "label": "MAGIC",
+    "bits": 191,
+    "size": 60,
+    "color": "#00ff88",
+    "category": "RUNTIME",
+    "inherits": "gov:hadleylab-canonic:DEXTER:SERVICES"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:SERVICES:PLAYBOOKS",
+    "label": "PLAYBOOKS",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:SERVICES"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:SERVICES:TALK",
+    "label": "TALK",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:SERVICES"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:SERVICES:TALK:FINCHAT",
+    "label": "FINCHAT",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:SERVICES:TALK"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:SERVICES:TALK:LAWCHAT",
+    "label": "LAWCHAT",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:SERVICES:TALK"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:SERVICES:TALK:MAMMOCHAT",
+    "label": "MAMMOCHAT",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:SERVICES:TALK"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:SERVICES:TALK:MEDCHAT",
+    "label": "MEDCHAT",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:SERVICES:TALK"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:SERVICES:TALK:ONCOCHAT",
+    "label": "ONCOCHAT",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:SERVICES:TALK"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:SHOP",
+    "label": "SHOP",
+    "bits": 191,
+    "size": 60,
+    "color": "#ff9f0a",
+    "category": "COMMERCE",
+    "inherits": "gov:hadleylab-canonic:DEXTER"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:SHOP:BLOG",
+    "label": "BLOG",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:SHOP"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:SHOP:BOOK",
+    "label": "BOOK",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:SHOP"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:SHOP:CHAT",
+    "label": "CHAT",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:SHOP"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:SHOP:PAPER",
+    "label": "PAPER",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:SHOP"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:SHOP:WORK-TALK",
+    "label": "WORK-TALK",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:SHOP"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:VAULT",
+    "label": "VAULT",
+    "bits": 255,
+    "size": 80,
+    "color": "#ff9f0a",
+    "category": "COMMERCE",
+    "inherits": "gov:hadleylab-canonic:DEXTER"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:VAULT:DEALS:ATOM-AVINASH",
+    "label": "ATOM-AVINASH",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:VAULT:DEALS"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:VAULT:DEALS:MARK-MALEK",
+    "label": "MARK-MALEK",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:VAULT:DEALS"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:VAULT:DEALS:OC-MAMMOCHAT",
+    "label": "OC-MAMMOCHAT",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:VAULT:DEALS"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:VAULT:FINANCIALS",
+    "label": "FINANCIALS",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:VAULT"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:VAULT:FORECASTS",
+    "label": "FORECASTS",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:VAULT"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:VAULT:INTEL",
+    "label": "INTEL",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:VAULT"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:VAULT:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:VAULT"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:VAULT:PATENTS",
+    "label": "PATENTS",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:VAULT"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:VAULT:PATENTS:APPLICATIONS",
+    "label": "APPLICATIONS",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:VAULT:PATENTS"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:VAULT:PATENTS:DISCLOSURES",
+    "label": "DISCLOSURES",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:VAULT:PATENTS"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:VAULT:PATENTS:DUE-DILIGENCE",
+    "label": "DUE-DILIGENCE",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:VAULT:PATENTS"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:VAULT:PATENTS:PROVISIONALS",
+    "label": "PROVISIONALS",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:VAULT:PATENTS"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:VAULT:RESERVES",
+    "label": "RESERVES",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:VAULT"
+  },
+  {
+    "source": "http",
+    "repo": "canonic-foundation.github.io",
+    "id": "http:canonic-foundation.github.io:.",
+    "label": "FOUNDATION",
+    "bits": 255,
+    "size": 80,
+    "color": "#ffd60a",
+    "category": "GOVERNANCE",
+    "inherits": "gov:canonic-canonic:FOUNDATION"
+  },
+  {
+    "source": "http",
+    "repo": "canonic-industries.github.io",
+    "id": "http:canonic-industries.github.io:.",
+    "label": "INDUSTRIES",
+    "bits": 255,
+    "size": 80,
+    "color": "#bf5af2",
+    "category": "KNOWLEDGE",
+    "inherits": "gov:canonic-canonic:INDUSTRIES"
+  },
+  {
+    "source": "http",
+    "repo": "canonic-magic.github.io",
+    "id": "http:canonic-magic.github.io:.",
+    "label": "MAGIC",
+    "bits": 255,
+    "size": 80,
+    "color": "#00ff88",
+    "category": "RUNTIME",
+    "inherits": "gov:canonic-canonic:MAGIC"
+  },
+  {
+    "source": "http",
+    "repo": "hadleylab-dexter.github.io",
+    "id": "http:hadleylab-dexter.github.io:.",
+    "label": "HADLEYLAB",
+    "bits": 255,
+    "size": 80,
+    "color": "#ec4899",
+    "category": "SERVICES",
+    "inherits": "gov:hadleylab-canonic:."
+  },
+  {
+    "source": "magic",
+    "repo": "magic://",
+    "id": "magic://GALAXY",
+    "label": "GALAXY",
+    "bits": 255,
+    "size": 80,
+    "color": "#00ff88",
+    "category": "RUNTIME",
+    "inherits": "gov:canonic-canonic:MAGIC"
+  }
 ]
