@@ -16,7 +16,7 @@
   "hero": {
     "badge": "BY CANON",
     "title": "The Future of <span class=\"accent\">Work.</span>",
-    "description": "Every regulated industry pays consultants to check boxes. We replaced the consultant with a specification. One framework. 70+ compliance standards. Validated automatically. Your team ships product instead of paperwork. Coin equals work. Work equals value. That\u2019s MAGIC.",
+    "description": "Every regulated industry pays consultants to check boxes. We replaced the consultant with a specification. One framework. 80+ compliance standards. Validated automatically. Your team ships product instead of paperwork. Coin equals work. Work equals value. That\u2019s MAGIC.",
     "cta": [
       { "label": "Try TALK", "href": "#", "class": "btn-green", "talk": true },
       { "label": "See How It Works", "href": "#primitives", "class": "btn-secondary" }
@@ -52,7 +52,7 @@
       "id": "galaxy",
       "title": "The Galaxy",
       "eyebrow": "THE PROOF",
-      "description": "Every node is a governed project. Every edge is an inheritance chain. Every color is a category. 19 organizations. 185+ projects. 70+ compliance standards. This is what governed work looks like.",
+      "description": "Every node is a governed project. Every edge is an inheritance chain. Every color is a category. 21+ organizations. 250+ projects. 80+ compliance standards. This is what governed work looks like.",
       "galaxy": {
         "height": "70vh",
         "hud": true,
@@ -64,10 +64,10 @@
       "id": "galaxy-stats",
       "wrapClass": "galaxy",
       "galaxyStats": [
-        { "value": "19", "label": "Organizations" },
-        { "value": "185+", "label": "Projects" },
-        { "value": "70+", "label": "Standards" },
-        { "value": "\u221e", "label": "Services" }
+        { "value": "21+", "label": "Organizations" },
+        { "value": "250+", "label": "Projects" },
+        { "value": "80+", "label": "Standards" },
+        { "value": "21", "label": "Domains" }
       ],
       "cta": { "label": "Full Screen Galaxy \u2192", "href": "./MAGIC.html" }
     },
@@ -160,7 +160,7 @@
           "title": "Validate",
           "titleColor": "#bf5af2",
           "subtitle": "8 dimensions",
-          "text": "Eight questions. Seventy standards. MAGIC scores your work against real compliance frameworks \u2014 automatically."
+          "text": "Eight questions. Eighty standards. MAGIC scores your work against real compliance frameworks \u2014 automatically."
         },
         {
           "class": "primitive-card",
@@ -244,7 +244,8 @@
         "rows": [
           ["\ud83d\udd27 Platform", "Agent, Knowledge, Evolution", "Free"],
           ["\ud83d\udcbc Productivity", "Email, Calendar, Social, Analytics", "Business"],
-          ["\ud83c\udfe5 Specialist", "MammoChat, PsychChat, Genomics, InvestorChat", "Enterprise"]
+          ["\ud83c\udfe5 Specialist", "MammoChat, PsychChat, Genomics, InvestorChat", "Enterprise"],
+          ["\ud83c\udfed Industries", "Robotics, Automotive, Aerospace, Manufacturing, Energy, Logistics, Agriculture, Education", "Enterprise"]
         ]
       }
     }
