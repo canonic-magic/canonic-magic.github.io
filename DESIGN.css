@@ -108,6 +108,11 @@
 
     /* ── Focus ── */
     --focus-ring: 0 0 0 3px rgba(var(--accent-rgb), 0.15);
+
+    /* ── Header geometry (fleet-wide behavior) ── */
+    --eco-h: 40px;
+    --nav-h: 64px;
+    --header-offset: calc(var(--eco-h) + var(--nav-h));
 }
 
 
@@ -233,10 +238,12 @@ img { max-width: 100%; display: block; }
     backdrop-filter: blur(20px) saturate(180%);
     z-index: 1001;
     border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-    padding: 8px 24px;
+    height: var(--eco-h);
+    padding: 0 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    overflow-x: auto;
 }
 
 .eco-brand {
@@ -326,7 +333,7 @@ img { max-width: 100%; display: block; }
 /* Nav — frosted glass (offset for eco-bar) */
 nav {
     position: fixed;
-    top: 33px;
+    top: var(--eco-h);
     left: 0;
     right: 0;
     background: rgba(0, 0, 0, 0.7);
@@ -339,7 +346,8 @@ nav {
 .nav-inner {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 16px 24px;
+    min-height: var(--nav-h);
+    padding: 0 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -376,7 +384,7 @@ nav {
 
 /* Hero (offset for eco-bar) */
 .hero {
-    padding: 160px 24px 80px;
+    padding: calc(var(--header-offset) + 56px) 24px 80px;
     text-align: center;
 }
 
@@ -1239,8 +1247,12 @@ select {
    ═══════════════════════════════════════════════════════════════════ */
 
 @media (max-width: 768px) {
+    :root {
+        --eco-h: 38px;
+        --nav-h: 58px;
+    }
     .container { padding: 24px; }
-    .hero { padding: 100px 24px 60px; }
+    .hero { padding: calc(var(--header-offset) + 36px) 24px 60px; }
     .stats { grid-template-columns: repeat(2, 1fr); }
     .grid-3, .grid-4, .grid-5 { grid-template-columns: repeat(2, 1fr); }
     .paradigm { grid-template-columns: 1fr; }
@@ -1262,8 +1274,12 @@ select {
 }
 
 @media (max-width: 480px) {
+    :root {
+        --eco-h: 34px;
+        --nav-h: 52px;
+    }
     .container { padding: var(--space-xs); }
-    .hero { padding: 80px var(--space-xs) 40px; }
+    .hero { padding: calc(var(--header-offset) + 20px) var(--space-xs) 40px; }
     .hero-content h1 { font-size: clamp(28px, 8vw, 40px); }
     .stats { grid-template-columns: 1fr; }
     .stat { padding: var(--space-sm); }
@@ -2132,7 +2148,7 @@ select {
 .galaxy-hero { position: relative; }
 .galaxy-hero-text {
     text-align: center;
-    padding: 100px 24px 32px;
+    padding: calc(var(--header-offset) + 20px) 24px 32px;
     position: relative;
     z-index: 2;
 }
@@ -2323,7 +2339,7 @@ select {
 
 /* Split hero layout */
 .hero-split {
-    padding: 140px 24px 80px;
+    padding: calc(var(--header-offset) + 28px) 24px 80px;
     background: linear-gradient(180deg, rgba(var(--accent-rgb, 96,165,250), 0.06) 0%, var(--bg) 100%);
 }
 .hero-split-inner {
@@ -2597,7 +2613,7 @@ select {
 /* Demo — responsive */
 @media (max-width: 768px) {
     .hero-split-inner { grid-template-columns: 1fr; gap: 40px; }
-    .hero-split { padding: 100px 24px 40px; }
+    .hero-split { padding: calc(var(--header-offset) + 20px) 24px 40px; }
     .device-container { order: -1; }
     .iphone { width: 240px; height: 500px; }
 }

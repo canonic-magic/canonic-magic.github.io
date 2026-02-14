@@ -65,9 +65,24 @@ var RENDER = (function () {
     }
 
     // ── NAV ──────────────────────────────────────────────
-    function renderNav(nav, scopeIcon, scopeName) {
+    function normalizeNav(nav, sections) {
+        if (nav && nav.length) return nav;
+        var items = [];
+        (sections || []).forEach(function (sec) {
+            if (!sec || !sec.id) return;
+            if (items.length >= 4) return;
+            var id = String(sec.id);
+            if (id === 'cta' || id === 'mission' || id === 'axiom-block' || id === 'thesis-lead' || id.indexOf('-lead') !== -1) return;
+            var label = sec.title || id.replace(/[-_]/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+            items.push({ label: label, href: '#' + id });
+        });
+        return items;
+    }
+
+    function renderNav(nav, scopeIcon, scopeName, sections) {
         var el = document.getElementById('nav');
         if (!el) return;
+        var navItems = normalizeNav(nav, sections);
 
         var html = '<div class="nav-inner">';
         html += '<a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--fg);">';
@@ -75,9 +90,9 @@ var RENDER = (function () {
         if (scopeName) html += '<span style="font-size:20px;font-weight:600;letter-spacing:-0.02em;">' + scopeName + '</span>';
         html += '</a>';
 
-        if (nav && nav.length) {
+        if (navItems && navItems.length) {
             html += '<ul class="nav-links">';
-            nav.forEach(function (item) {
+            navItems.forEach(function (item) {
                 html += '<li><a href="' + item.href + '">' + item.label + '</a></li>';
             });
             html += '</ul>';
@@ -362,14 +377,19 @@ var RENDER = (function () {
             }
 
             // Generated depth-2 content (compiled from GOV tree)
-            if (sec.generated && sec.generated.children && sec.generated.children.length) {
+            if (sec.generated && ((sec.generated.children && sec.generated.children.length) || sec.generated.narrative)) {
                 html += '<div style="margin-top:20px;padding:18px;border:1px solid var(--border);border-radius:12px;background:var(--bg-soft);">';
                 html += '<div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--fg-tertiary);margin-bottom:12px;">Depth 2 · Gov Derived</div>';
-                html += '<div style="display:flex;flex-wrap:wrap;gap:8px;">';
-                sec.generated.children.forEach(function (c) {
-                    html += '<span style="padding:6px 10px;border:1px solid rgba(var(--accent-rgb,59,130,246),0.28);border-radius:999px;font-size:11px;font-weight:600;color:var(--fg-secondary);background:rgba(var(--accent-rgb,59,130,246),0.08);">' + c.label + '</span>';
-                });
-                html += '</div>';
+                if (sec.generated.narrative) {
+                    html += '<p style="margin:0 0 12px 0;font-size:13px;line-height:1.6;color:var(--fg-secondary);">' + sec.generated.narrative + '</p>';
+                }
+                if (sec.generated.children && sec.generated.children.length) {
+                    html += '<div style="display:flex;flex-wrap:wrap;gap:8px;">';
+                    sec.generated.children.forEach(function (c) {
+                        html += '<span style="padding:6px 10px;border:1px solid rgba(var(--accent-rgb,59,130,246),0.28);border-radius:999px;font-size:11px;font-weight:600;color:var(--fg-secondary);background:rgba(var(--accent-rgb,59,130,246),0.08);">' + c.label + '</span>';
+                    });
+                    html += '</div>';
+                }
                 if (sec.generated.source) {
                     html += '<div style="margin-top:10px;font-size:11px;color:var(--fg-tertiary);font-family:var(--mono);">source: ' + sec.generated.source + '</div>';
                 }
@@ -707,7 +727,7 @@ var RENDER = (function () {
 
         // Render from CONTENT.json
         if (content.fleet) renderEcoBar(content.fleet, canon.scope);
-        if (content.nav) renderNav(content.nav, canon.navIcon, canon.name);
+        renderNav(content.nav, canon.navIcon, canon.name, content.sections);
         if (content.hero) renderHero(content.hero);
         if (content.stats) renderStats(content.stats);
         if (content.sections) renderSections(content.sections);
