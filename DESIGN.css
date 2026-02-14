@@ -1,3 +1,4 @@
+/* GENERATED — site=canonic-magic.github.io scope=MAGIC accent=#00ff88 */
 /**
  * MAGIC DESIGN — THE CANONIC FLEET DESIGN LANGUAGE
  *
@@ -7,14 +8,9 @@
  * WORK   = COIN
  *
  * The LANG dimension of MAGIC (128-bit).
- * One file. Every frontend inherits it.
- * One variable changes per scope: --accent.
- * Everything else is THE DESIGN.
- *
- * Fleet:
- *   canonic-foundation.github.io    --accent: #7c3aed (purple)
- *   canonic-magic.github.io         --accent: #00ff88 (green)
- *   hadleylab-dexter.github.io      --accent: #60a5fa (baby blue)
+ * One governed template. Every frontend compiles from it.
+ * Site identity compiles from CANON.json (scope + accent).
+ * Layout, components, and motion tokens remain shared.
  *
  * Layer 0: Tokens
  * Layer 1: Reset + Base
@@ -52,8 +48,8 @@
     --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.6);
 
     /* ── Accent (override per scope via CANON.json) ── */
-    --accent: #3b82f6;
-    --accent-rgb: 59, 130, 246;
+    --accent: #00ff88;
+    --accent-rgb: 0, 255, 136;
 
     /* ── Category Palette (DESIGN.md §Color System) ── */
     --kernel: #ff0088;

@@ -3,83 +3,85 @@
   { "id": "MAGIC-ROOT", "label": "MAGIC", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "FOUNDATION" },
   { "id": "HADLEYLAB-ROOT", "label": "HADLEY LAB", "bits": 255, "size": 70, "color": "#60a5fa", "category": "SERVICES", "repo": "hadleylab-canonic", "inherits": "FOUNDATION" }
 ,
-  { "id": "MAGIC", "label": "MAGIC", "bits": 191, "size": 60, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "FOUNDATION" }
+  { "id": "MAGIC", "label": "MAGIC", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "FOUNDATION" }
 ,
-  { "id": "INDUSTRIES", "label": "INDUSTRIES", "bits": 191, "size": 60, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "FOUNDATION" }
+  { "id": "INDUSTRIES", "label": "INDUSTRIES", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "FOUNDATION" }
 ,
-  { "id": "FOUNDATION", "label": "FOUNDATION", "bits": 191, "size": 60, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "canonic-canonic", "inherits": "FOUNDATION" }
+  { "id": "FOUNDATION", "label": "FOUNDATION", "bits": 255, "size": 80, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "canonic-canonic", "inherits": "FOUNDATION" }
 ,
-  { "id": "SHOP", "label": "SHOP", "bits": 191, "size": 60, "color": "#ff9f0a", "category": "COMMERCE", "repo": "canonic-canonic", "inherits": "FOUNDATION" }
+  { "id": "SHOP", "label": "SHOP", "bits": 255, "size": 80, "color": "#ff9f0a", "category": "COMMERCE", "repo": "canonic-canonic", "inherits": "FOUNDATION" }
 ,
-  { "id": "PROGRAMMING", "label": "PROGRAMMING", "bits": 191, "size": 60, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "canonic-canonic", "inherits": "FOUNDATION" }
+  { "id": "PROGRAMMING", "label": "PROGRAMMING", "bits": 255, "size": 80, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "canonic-canonic", "inherits": "FOUNDATION" }
 ,
-  { "id": "BLOG", "label": "BLOG", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "canonic-canonic", "inherits": "SHOP" }
+  { "id": "BLOG", "label": "BLOG", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "canonic-canonic", "inherits": "SHOP" }
 ,
-  { "id": "RESERVES", "label": "RESERVES", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "canonic-canonic", "inherits": "SHOP" }
+  { "id": "RESERVES", "label": "RESERVES", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "canonic-canonic", "inherits": "SHOP" }
 ,
-  { "id": "SALES", "label": "SALES", "bits": 191, "size": 60, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "MAGIC-ROOT" }
+  { "id": "SALES", "label": "SALES", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "MAGIC-ROOT" }
 ,
-  { "id": "ORGS", "label": "ORGS", "bits": 191, "size": 60, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-canonic", "inherits": "MAGIC-ROOT" }
+  { "id": "DISTRIBUTED", "label": "DISTRIBUTED", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "canonic-canonic", "inherits": "MAGIC-ROOT" }
 ,
-  { "id": "MARKET", "label": "MARKET", "bits": 191, "size": 60, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "MAGIC-ROOT" }
+  { "id": "ORGS", "label": "ORGS", "bits": 255, "size": 80, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-canonic", "inherits": "MAGIC-ROOT" }
 ,
-  { "id": "GTM", "label": "GTM", "bits": 191, "size": 60, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "MAGIC-ROOT" }
+  { "id": "MARKET", "label": "MARKET", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "MAGIC-ROOT" }
+,
+  { "id": "GTM", "label": "GTM", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "MAGIC-ROOT" }
 ,
   { "id": "VAULT", "label": "VAULT", "bits": 255, "size": 80, "color": "#ff9f0a", "category": "COMMERCE", "repo": "canonic-canonic", "inherits": "MAGIC-ROOT" }
 ,
-  { "id": "TOOLCHAIN", "label": "TOOLCHAIN", "bits": 191, "size": 60, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "MAGIC-ROOT" }
+  { "id": "TOOLCHAIN", "label": "TOOLCHAIN", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "MAGIC-ROOT" }
 ,
-  { "id": "HORIZONTAL", "label": "HORIZONTAL", "bits": 191, "size": 60, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "INDUSTRIES" }
+  { "id": "HORIZONTAL", "label": "HORIZONTAL", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "INDUSTRIES" }
 ,
-  { "id": "META", "label": "META", "bits": 191, "size": 60, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "canonic-canonic", "inherits": "INDUSTRIES" }
+  { "id": "META", "label": "META", "bits": 255, "size": 80, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "canonic-canonic", "inherits": "INDUSTRIES" }
 ,
-  { "id": "REGULATORY", "label": "REGULATORY", "bits": 191, "size": 60, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-canonic", "inherits": "INDUSTRIES" }
+  { "id": "REGULATORY", "label": "REGULATORY", "bits": 255, "size": 80, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-canonic", "inherits": "INDUSTRIES" }
 ,
-  { "id": "VERTICALS", "label": "VERTICALS", "bits": 191, "size": 60, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "INDUSTRIES" }
+  { "id": "VERTICALS", "label": "VERTICALS", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "INDUSTRIES" }
 ,
-  { "id": "AGRICULTURE", "label": "AGRICULTURE", "bits": 191, "size": 60, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
+  { "id": "AGRICULTURE", "label": "AGRICULTURE", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
 ,
-  { "id": "GENOMICS", "label": "GENOMICS", "bits": 191, "size": 60, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
+  { "id": "GENOMICS", "label": "GENOMICS", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
 ,
-  { "id": "QUALITY", "label": "QUALITY", "bits": 191, "size": 60, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
+  { "id": "QUALITY", "label": "QUALITY", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
 ,
-  { "id": "ENERGY", "label": "ENERGY", "bits": 191, "size": 60, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
+  { "id": "ENERGY", "label": "ENERGY", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
 ,
-  { "id": "ROBOTICS", "label": "ROBOTICS", "bits": 191, "size": 60, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
+  { "id": "ROBOTICS", "label": "ROBOTICS", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
 ,
-  { "id": "EDUCATION", "label": "EDUCATION", "bits": 191, "size": 60, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
+  { "id": "EDUCATION", "label": "EDUCATION", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
 ,
-  { "id": "AUTOMOTIVE", "label": "AUTOMOTIVE", "bits": 191, "size": 60, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
+  { "id": "AUTOMOTIVE", "label": "AUTOMOTIVE", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
 ,
-  { "id": "MANUFACTURING", "label": "MANUFACTURING", "bits": 191, "size": 60, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
+  { "id": "MANUFACTURING", "label": "MANUFACTURING", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
 ,
-  { "id": "RELIGION", "label": "RELIGION", "bits": 191, "size": 60, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
+  { "id": "RELIGION", "label": "RELIGION", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
 ,
-  { "id": "MEDICINE", "label": "MEDICINE", "bits": 191, "size": 60, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
+  { "id": "MEDICINE", "label": "MEDICINE", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
 ,
-  { "id": "FINANCE", "label": "FINANCE", "bits": 191, "size": 60, "color": "#ff9f0a", "category": "COMMERCE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
+  { "id": "FINANCE", "label": "FINANCE", "bits": 255, "size": 80, "color": "#ff9f0a", "category": "COMMERCE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
 ,
-  { "id": "AEROSPACE", "label": "AEROSPACE", "bits": 191, "size": 60, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
+  { "id": "AEROSPACE", "label": "AEROSPACE", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
 ,
-  { "id": "DEFENSE", "label": "DEFENSE", "bits": 191, "size": 60, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-canonic", "inherits": "VERTICALS" }
+  { "id": "DEFENSE", "label": "DEFENSE", "bits": 255, "size": 80, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-canonic", "inherits": "VERTICALS" }
 ,
-  { "id": "LOGISTICS", "label": "LOGISTICS", "bits": 191, "size": 60, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
+  { "id": "LOGISTICS", "label": "LOGISTICS", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
 ,
-  { "id": "GOVERNMENT", "label": "GOVERNMENT", "bits": 191, "size": 60, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-canonic", "inherits": "REGULATORY" }
+  { "id": "GOVERNMENT", "label": "GOVERNMENT", "bits": 255, "size": 80, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-canonic", "inherits": "REGULATORY" }
 ,
-  { "id": "LAW", "label": "LAW", "bits": 191, "size": 60, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-canonic", "inherits": "REGULATORY" }
+  { "id": "LAW", "label": "LAW", "bits": 255, "size": 80, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-canonic", "inherits": "REGULATORY" }
 ,
-  { "id": "BLOCKCHAIN", "label": "BLOCKCHAIN", "bits": 191, "size": 60, "color": "#ff9f0a", "category": "COMMERCE", "repo": "canonic-canonic", "inherits": "REGULATORY" }
+  { "id": "BLOCKCHAIN", "label": "BLOCKCHAIN", "bits": 255, "size": 80, "color": "#ff9f0a", "category": "COMMERCE", "repo": "canonic-canonic", "inherits": "REGULATORY" }
 ,
-  { "id": "DATA", "label": "DATA", "bits": 191, "size": 60, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "REGULATORY" }
+  { "id": "DATA", "label": "DATA", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "REGULATORY" }
 ,
-  { "id": "SECURITY", "label": "SECURITY", "bits": 191, "size": 60, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "HORIZONTAL" }
+  { "id": "SECURITY", "label": "SECURITY", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "HORIZONTAL" }
 ,
-  { "id": "SAFETY", "label": "SAFETY", "bits": 191, "size": 60, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "HORIZONTAL" }
+  { "id": "SAFETY", "label": "SAFETY", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "HORIZONTAL" }
 ,
-  { "id": "PATENT", "label": "PATENT", "bits": 191, "size": 60, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-canonic", "inherits": "LAW" }
+  { "id": "PATENT", "label": "PATENT", "bits": 255, "size": 80, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-canonic", "inherits": "LAW" }
 ,
-  { "id": "DEXTER", "label": "DEXTER", "bits": 191, "size": 60, "color": "#ec4899", "category": "SERVICES", "repo": "hadleylab-canonic", "inherits": "HADLEYLAB-ROOT" }
+  { "id": "DEXTER", "label": "DEXTER", "bits": 255, "size": 80, "color": "#ec4899", "category": "SERVICES", "repo": "hadleylab-canonic", "inherits": "HADLEYLAB-ROOT" }
 ,
   { "id": "SHOP", "label": "SHOP", "bits": 191, "size": 60, "color": "#ff9f0a", "category": "COMMERCE", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
 ,
@@ -88,6 +90,14 @@
   { "id": "SERVICES", "label": "SERVICES", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
 ,
   { "id": "VAULT", "label": "VAULT", "bits": 255, "size": 80, "color": "#ff9f0a", "category": "COMMERCE", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
+,
+  { "id": "MAGIC", "label": "MAGIC", "bits": 191, "size": 60, "color": "#00ff88", "category": "RUNTIME", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
+,
+  { "id": "HEALTH", "label": "HEALTH", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
+,
+  { "id": "FOUNDATION", "label": "FOUNDATION", "bits": 191, "size": 60, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
+,
+  { "id": "PLAYBOOKS", "label": "PLAYBOOKS", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
 ,
   { "id": "GENERATOR", "label": "GENERATOR", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
 ,
@@ -113,16 +123,16 @@
 ,
   { "id": "BOOK", "label": "BOOK", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
 ,
-  { "id": "INTEL", "label": "INTEL", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "VAULT" }
+  { "id": "INTEL", "label": "INTEL", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "VAULT" }
 ,
-  { "id": "FINANCIALS", "label": "FINANCIALS", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "VAULT" }
+  { "id": "FINANCIALS", "label": "FINANCIALS", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "VAULT" }
 ,
-  { "id": "PATENTS", "label": "PATENTS", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "VAULT" }
+  { "id": "PATENTS", "label": "PATENTS", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "VAULT" }
 ,
   { "id": "LEARNING", "label": "LEARNING", "bits": 255, "size": 80, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "hadleylab-canonic", "inherits": "VAULT" }
 ,
-  { "id": "FORECASTS", "label": "FORECASTS", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "VAULT" }
+  { "id": "FORECASTS", "label": "FORECASTS", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "VAULT" }
 ,
-  { "id": "RESERVES", "label": "RESERVES", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "VAULT" }
+  { "id": "RESERVES", "label": "RESERVES", "bits": 191, "size": 60, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "VAULT" }
 
 ]
