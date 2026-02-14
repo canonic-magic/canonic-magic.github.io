@@ -1,13 +1,126 @@
 [
-  { "id": "FOUNDATION", "label": "FOUNDATION", "bits": 255, "size": 80, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "canonic-foundation", "inherits": null },
-  { "id": "MAGIC-ROOT", "label": "MAGIC", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-magic", "inherits": "FOUNDATION" },
-  { "id": "HADLEYLAB-ROOT", "label": "HADLEY LAB", "bits": 255, "size": 70, "color": "#60a5fa", "category": "SERVICES", "repo": "hadleylab-canonic", "inherits": "FOUNDATION" },
-  { "id": "SHOP", "label": "SHOP", "bits": 255, "size": 80, "color": "#ff9f0a", "category": "COMMERCE", "repo": "canonic-foundation", "inherits": "FOUNDATION" },
-  { "id": "LANGUAGE", "label": "LANGUAGE", "bits": 255, "size": 80, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "canonic-foundation", "inherits": "FOUNDATION" },
-  { "id": "IDIOMS", "label": "IDIOMS", "bits": 255, "size": 80, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "canonic-foundation", "inherits": "FOUNDATION" },
-  { "id": "PROGRAMMING", "label": "PROGRAMMING", "bits": 255, "size": 80, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "canonic-foundation", "inherits": "FOUNDATION" },
-  { "id": "MAGIC", "label": "MAGIC", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-magic", "inherits": "MAGIC-ROOT" },
-  { "id": "ORGS", "label": "ORGS", "bits": 255, "size": 80, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-magic", "inherits": "MAGIC-ROOT" },
-  { "id": "VAULT", "label": "VAULT", "bits": 255, "size": 80, "color": "#ff9f0a", "category": "COMMERCE", "repo": "canonic-magic", "inherits": "MAGIC-ROOT" },
+  { "id": "FOUNDATION", "label": "FOUNDATION", "bits": 255, "size": 80, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "canonic-canonic", "inherits": null },
+  { "id": "MAGIC-ROOT", "label": "MAGIC", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "FOUNDATION" },
+  { "id": "HADLEYLAB-ROOT", "label": "HADLEY LAB", "bits": 255, "size": 70, "color": "#60a5fa", "category": "SERVICES", "repo": "hadleylab-canonic", "inherits": "FOUNDATION" }
+,
+  { "id": "MAGIC", "label": "MAGIC", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "FOUNDATION" }
+,
+  { "id": "INDUSTRIES", "label": "INDUSTRIES", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "FOUNDATION" }
+,
+  { "id": "FOUNDATION", "label": "FOUNDATION", "bits": 255, "size": 80, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "canonic-canonic", "inherits": "FOUNDATION" }
+,
+  { "id": "LEARNING", "label": "LEARNING", "bits": 255, "size": 80, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "canonic-canonic", "inherits": "FOUNDATION" }
+,
+  { "id": "SHOP", "label": "SHOP", "bits": 255, "size": 80, "color": "#ff9f0a", "category": "COMMERCE", "repo": "canonic-canonic", "inherits": "FOUNDATION" }
+,
+  { "id": "PROGRAMMING", "label": "PROGRAMMING", "bits": 255, "size": 80, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "canonic-canonic", "inherits": "FOUNDATION" }
+,
+  { "id": "BLOG", "label": "BLOG", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "canonic-canonic", "inherits": "SHOP" }
+,
+  { "id": "RESERVES", "label": "RESERVES", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "canonic-canonic", "inherits": "SHOP" }
+,
+  { "id": "SALES", "label": "SALES", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "MAGIC-ROOT" }
+,
+  { "id": "LEARNING", "label": "LEARNING", "bits": 255, "size": 80, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "canonic-canonic", "inherits": "MAGIC-ROOT" }
+,
+  { "id": "ORGS", "label": "ORGS", "bits": 255, "size": 80, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-canonic", "inherits": "MAGIC-ROOT" }
+,
+  { "id": "MARKET", "label": "MARKET", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "MAGIC-ROOT" }
+,
+  { "id": "GTM", "label": "GTM", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "MAGIC-ROOT" }
+,
+  { "id": "VAULT", "label": "VAULT", "bits": 255, "size": 80, "color": "#ff9f0a", "category": "COMMERCE", "repo": "canonic-canonic", "inherits": "MAGIC-ROOT" }
+,
+  { "id": "TOOLCHAIN", "label": "TOOLCHAIN", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "MAGIC-ROOT" }
+,
+  { "id": "HORIZONTAL", "label": "HORIZONTAL", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "INDUSTRIES" }
+,
+  { "id": "META", "label": "META", "bits": 255, "size": 80, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "canonic-canonic", "inherits": "INDUSTRIES" }
+,
+  { "id": "REGULATORY", "label": "REGULATORY", "bits": 255, "size": 80, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-canonic", "inherits": "INDUSTRIES" }
+,
+  { "id": "VERTICALS", "label": "VERTICALS", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "INDUSTRIES" }
+,
+  { "id": "GENOMICS", "label": "GENOMICS", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
+,
+  { "id": "QUALITY", "label": "QUALITY", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
+,
+  { "id": "RELIGION", "label": "RELIGION", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
+,
+  { "id": "MEDICINE", "label": "MEDICINE", "bits": 255, "size": 80, "color": "#bf5af2", "category": "KNOWLEDGE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
+,
+  { "id": "FINANCE", "label": "FINANCE", "bits": 255, "size": 80, "color": "#ff9f0a", "category": "COMMERCE", "repo": "canonic-canonic", "inherits": "VERTICALS" }
+,
+  { "id": "DEFENSE", "label": "DEFENSE", "bits": 255, "size": 80, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-canonic", "inherits": "VERTICALS" }
+,
+  { "id": "GOVERNMENT", "label": "GOVERNMENT", "bits": 255, "size": 80, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-canonic", "inherits": "REGULATORY" }
+,
+  { "id": "LAW", "label": "LAW", "bits": 255, "size": 80, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-canonic", "inherits": "REGULATORY" }
+,
+  { "id": "BLOCKCHAIN", "label": "BLOCKCHAIN", "bits": 255, "size": 80, "color": "#ff9f0a", "category": "COMMERCE", "repo": "canonic-canonic", "inherits": "REGULATORY" }
+,
+  { "id": "DATA", "label": "DATA", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "REGULATORY" }
+,
+  { "id": "SECURITY", "label": "SECURITY", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "HORIZONTAL" }
+,
+  { "id": "SAFETY", "label": "SAFETY", "bits": 255, "size": 80, "color": "#00ff88", "category": "RUNTIME", "repo": "canonic-canonic", "inherits": "HORIZONTAL" }
+,
+  { "id": "LEARNING", "label": "LEARNING", "bits": 255, "size": 80, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "canonic-canonic", "inherits": "META" }
+,
+  { "id": "PATENT", "label": "PATENT", "bits": 255, "size": 80, "color": "#2997ff", "category": "OPERATIONS", "repo": "canonic-canonic", "inherits": "LAW" }
+,
+  { "id": "LEARNING", "label": "LEARNING", "bits": 255, "size": 80, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "hadleylab-canonic", "inherits": "HADLEYLAB-ROOT" }
+,
   { "id": "DEXTER", "label": "DEXTER", "bits": 255, "size": 80, "color": "#ec4899", "category": "SERVICES", "repo": "hadleylab-canonic", "inherits": "HADLEYLAB-ROOT" }
+,
+  { "id": "SHOP", "label": "SHOP", "bits": 255, "size": 80, "color": "#ff9f0a", "category": "COMMERCE", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
+,
+  { "id": "DECKS", "label": "DECKS", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
+,
+  { "id": "SERVICES", "label": "SERVICES", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
+,
+  { "id": "VAULT", "label": "VAULT", "bits": 255, "size": 80, "color": "#ff9f0a", "category": "COMMERCE", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
+,
+  { "id": "LEARNING", "label": "LEARNING", "bits": 255, "size": 80, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
+,
+  { "id": "GENERATOR", "label": "GENERATOR", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
+,
+  { "id": "TALK", "label": "TALK", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
+,
+  { "id": "MAMMOCHAT", "label": "MAMMOCHAT", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "TALK" }
+,
+  { "id": "LEARNING", "label": "LEARNING", "bits": 255, "size": 80, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "hadleylab-canonic", "inherits": "TALK" }
+,
+  { "id": "LAWCHAT", "label": "LAWCHAT", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "TALK" }
+,
+  { "id": "ONCOCHAT", "label": "ONCOCHAT", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "TALK" }
+,
+  { "id": "MEDCHAT", "label": "MEDCHAT", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "TALK" }
+,
+  { "id": "FINCHAT", "label": "FINCHAT", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "TALK" }
+,
+  { "id": "PAPER", "label": "PAPER", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
+,
+  { "id": "WORK-TALK", "label": "WORK-TALK", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
+,
+  { "id": "CHAT", "label": "CHAT", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
+,
+  { "id": "LEARNING", "label": "LEARNING", "bits": 255, "size": 80, "color": "#ffd60a", "category": "GOVERNANCE", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
+,
+  { "id": "BLOG", "label": "BLOG", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
+,
+  { "id": "BOOK", "label": "BOOK", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "DEXTER" }
+,
+  { "id": "INTEL", "label": "INTEL", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "VAULT" }
+,
+  { "id": "FINANCIALS", "label": "FINANCIALS", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "VAULT" }
+,
+  { "id": "PATENTS", "label": "PATENTS", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "VAULT" }
+,
+  { "id": "LEARNINGS", "label": "LEARNINGS", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "VAULT" }
+,
+  { "id": "FORECASTS", "label": "FORECASTS", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "VAULT" }
+,
+  { "id": "RESERVES", "label": "RESERVES", "bits": 255, "size": 80, "color": "#64748b", "category": "ORG", "repo": "hadleylab-canonic", "inherits": "VAULT" }
+
 ]
