@@ -255,6 +255,17 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:FOUNDATION:SHOP:DOCTRINE",
+    "label": "DOCTRINE",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:FOUNDATION:SHOP"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:FOUNDATION:SHOP:LEARNING",
     "label": "LEARNING",
     "bits": 255,
@@ -1582,6 +1593,17 @@
     "color": "#00ff88",
     "category": "RUNTIME",
     "inherits": "gov:hadleylab-canonic:DEXTER:SERVICES"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:SERVICES:MAGIC:RUNPOD",
+    "label": "RUNPOD",
+    "bits": 191,
+    "size": 60,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:SERVICES:MAGIC"
   },
   {
     "source": "gov",
