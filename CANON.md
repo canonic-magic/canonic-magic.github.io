@@ -23,7 +23,7 @@ MUST:     Expose compliance as score/tier/state only (public API boundary)
 MUST:     Keep Galaxy and tier messaging consistent with governed MAGIC canon
 MUST:     Share DESIGN.css + render.js with fleet via sync-fleet
 MUST:     Validate root scope with magic validate = 255 before deploy
-MUST NOT: Expose private DETROS bit mapping from magic.c
+MUST NOT: Expose private kernel internals
 MUST NOT: Publish ungoverned product, pricing, or protocol claims
 SHOULD:   Keep http surface aligned with distributed validation matrix language
 ```
