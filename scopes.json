@@ -13,6 +13,17 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:FOUNDATION:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:FOUNDATION"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:FOUNDATION:PROGRAMMING",
     "label": "PROGRAMMING",
     "bits": 255,
@@ -20,6 +31,17 @@
     "color": "#ffd60a",
     "category": "GOVERNANCE",
     "inherits": "gov:canonic-canonic:FOUNDATION"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:FOUNDATION:PROGRAMMING"
   },
   {
     "source": "gov",
@@ -37,6 +59,28 @@
     "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:c:EVIDENCE",
     "label": "EVIDENCE",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:c"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:c:EVIDENCE:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:c:EVIDENCE"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:c:LEARNING",
+    "label": "LEARNING",
     "bits": 255,
     "size": 80,
     "color": "#64748b",
@@ -68,6 +112,28 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:python:EVIDENCE:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:python:EVIDENCE"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:python:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:python"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:swift",
     "label": "SWIFT",
     "bits": 255,
@@ -81,6 +147,28 @@
     "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:swift:EVIDENCE",
     "label": "EVIDENCE",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:swift"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:swift:EVIDENCE:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:swift:EVIDENCE"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:swift:LEARNING",
+    "label": "LEARNING",
     "bits": 255,
     "size": 80,
     "color": "#64748b",
@@ -112,6 +200,28 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:typescript:EVIDENCE:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:typescript:EVIDENCE"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:typescript:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:FOUNDATION:PROGRAMMING:typescript"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:FOUNDATION:SHOP",
     "label": "SHOP",
     "bits": 255,
@@ -134,6 +244,28 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:FOUNDATION:SHOP:BLOG:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:FOUNDATION:SHOP:BLOG"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:FOUNDATION:SHOP:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:FOUNDATION:SHOP"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:FOUNDATION:SHOP:RESERVES",
     "label": "RESERVES",
     "bits": 255,
@@ -141,6 +273,17 @@
     "color": "#64748b",
     "category": "ORG",
     "inherits": "gov:canonic-canonic:FOUNDATION:SHOP"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:FOUNDATION:SHOP:RESERVES:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:FOUNDATION:SHOP:RESERVES"
   },
   {
     "source": "gov",
@@ -167,6 +310,17 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:HORIZONTAL:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:HORIZONTAL"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:INDUSTRIES:HORIZONTAL:SAFETY",
     "label": "SAFETY",
     "bits": 255,
@@ -174,6 +328,17 @@
     "color": "#2997ff",
     "category": "OPERATIONS",
     "inherits": "gov:canonic-canonic:INDUSTRIES:HORIZONTAL"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:HORIZONTAL:SAFETY:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:HORIZONTAL:SAFETY"
   },
   {
     "source": "gov",
@@ -189,6 +354,28 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:HORIZONTAL:SECURITY:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:HORIZONTAL:SECURITY"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:INDUSTRIES:META",
     "label": "META",
     "bits": 255,
@@ -196,6 +383,17 @@
     "color": "#bf5af2",
     "category": "KNOWLEDGE",
     "inherits": "gov:canonic-canonic:INDUSTRIES"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:META:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:META"
   },
   {
     "source": "gov",
@@ -222,6 +420,17 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:REGULATORY:BLOCKCHAIN:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:REGULATORY:BLOCKCHAIN"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:INDUSTRIES:REGULATORY:DATA",
     "label": "DATA",
     "bits": 255,
@@ -229,6 +438,17 @@
     "color": "#2997ff",
     "category": "OPERATIONS",
     "inherits": "gov:canonic-canonic:INDUSTRIES:REGULATORY"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:REGULATORY:DATA:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:REGULATORY:DATA"
   },
   {
     "source": "gov",
@@ -244,6 +464,17 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:REGULATORY:GOVERNMENT:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:REGULATORY:GOVERNMENT"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:INDUSTRIES:REGULATORY:LAW",
     "label": "LAW",
     "bits": 255,
@@ -255,6 +486,17 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:REGULATORY:LAW:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:REGULATORY:LAW"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:INDUSTRIES:REGULATORY:LAW:PATENT",
     "label": "PATENT",
     "bits": 255,
@@ -262,6 +504,28 @@
     "color": "#2997ff",
     "category": "OPERATIONS",
     "inherits": "gov:canonic-canonic:INDUSTRIES:REGULATORY:LAW"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:REGULATORY:LAW:PATENT:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:REGULATORY:LAW:PATENT"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:REGULATORY:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:REGULATORY"
   },
   {
     "source": "gov",
@@ -288,6 +552,17 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:AEROSPACE:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:AEROSPACE"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:AGRICULTURE",
     "label": "AGRICULTURE",
     "bits": 255,
@@ -295,6 +570,17 @@
     "color": "#bf5af2",
     "category": "KNOWLEDGE",
     "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:AGRICULTURE:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:AGRICULTURE"
   },
   {
     "source": "gov",
@@ -310,6 +596,17 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:AUTOMOTIVE:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:AUTOMOTIVE"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:DEFENSE",
     "label": "DEFENSE",
     "bits": 255,
@@ -317,6 +614,17 @@
     "color": "#64748b",
     "category": "ORG",
     "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:DEFENSE:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:DEFENSE"
   },
   {
     "source": "gov",
@@ -332,6 +640,17 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:EDUCATION:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:EDUCATION"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:ENERGY",
     "label": "ENERGY",
     "bits": 255,
@@ -339,6 +658,17 @@
     "color": "#bf5af2",
     "category": "KNOWLEDGE",
     "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:ENERGY:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:ENERGY"
   },
   {
     "source": "gov",
@@ -354,12 +684,45 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:FINANCE:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:FINANCE"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:GENOMICS",
     "label": "GENOMICS",
     "bits": 255,
     "size": 80,
     "color": "#bf5af2",
     "category": "KNOWLEDGE",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:GENOMICS:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:GENOMICS"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
     "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS"
   },
   {
@@ -376,6 +739,17 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:LOGISTICS:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:LOGISTICS"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:MANUFACTURING",
     "label": "MANUFACTURING",
     "bits": 255,
@@ -383,6 +757,17 @@
     "color": "#bf5af2",
     "category": "KNOWLEDGE",
     "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:MANUFACTURING:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:MANUFACTURING"
   },
   {
     "source": "gov",
@@ -398,6 +783,17 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:MEDICINE:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:MEDICINE"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:MEDICINE:credentialing",
     "label": "CREDENTIALING",
     "bits": 255,
@@ -405,6 +801,17 @@
     "color": "#64748b",
     "category": "ORG",
     "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:MEDICINE"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:MEDICINE:credentialing:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:MEDICINE:credentialing"
   },
   {
     "source": "gov",
@@ -420,6 +827,17 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:MEDICINE:oncology:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:MEDICINE:oncology"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:MEDICINE:oncology:breast",
     "label": "BREAST",
     "bits": 255,
@@ -427,6 +845,17 @@
     "color": "#64748b",
     "category": "ORG",
     "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:MEDICINE:oncology"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:MEDICINE:oncology:breast:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:MEDICINE:oncology:breast"
   },
   {
     "source": "gov",
@@ -442,6 +871,17 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:MEDICINE:psychiatry:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:MEDICINE:psychiatry"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:QUALITY",
     "label": "QUALITY",
     "bits": 255,
@@ -449,6 +889,17 @@
     "color": "#bf5af2",
     "category": "KNOWLEDGE",
     "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:QUALITY:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:QUALITY"
   },
   {
     "source": "gov",
@@ -464,6 +915,17 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:buddhism",
     "label": "BUDDHISM",
     "bits": 255,
@@ -471,6 +933,17 @@
     "color": "#64748b",
     "category": "ORG",
     "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:buddhism:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:buddhism"
   },
   {
     "source": "gov",
@@ -486,6 +959,17 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:christianity:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:christianity"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:christianity:adventist:sda",
     "label": "SDA",
     "bits": 255,
@@ -493,6 +977,17 @@
     "color": "#64748b",
     "category": "ORG",
     "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:christianity:adventist"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:christianity:adventist:sda:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:christianity:adventist:sda"
   },
   {
     "source": "gov",
@@ -508,6 +1003,17 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:christianity:ancient:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:christianity:ancient"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:christianity:catholic",
     "label": "CATHOLIC",
     "bits": 255,
@@ -515,6 +1021,17 @@
     "color": "#64748b",
     "category": "ORG",
     "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:christianity"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:christianity:catholic:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:christianity:catholic"
   },
   {
     "source": "gov",
@@ -530,6 +1047,17 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:christianity:orthodox:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:christianity:orthodox"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:christianity:protestant",
     "label": "PROTESTANT",
     "bits": 255,
@@ -537,6 +1065,17 @@
     "color": "#64748b",
     "category": "ORG",
     "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:christianity"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:christianity:protestant:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:christianity:protestant"
   },
   {
     "source": "gov",
@@ -552,6 +1091,17 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:hinduism:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:hinduism"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:islam",
     "label": "ISLAM",
     "bits": 255,
@@ -559,6 +1109,17 @@
     "color": "#64748b",
     "category": "ORG",
     "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:islam:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:islam"
   },
   {
     "source": "gov",
@@ -574,6 +1135,17 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:islam:nation-of-islam:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:islam:nation-of-islam"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:islam:shia",
     "label": "SHIA",
     "bits": 255,
@@ -581,6 +1153,17 @@
     "color": "#64748b",
     "category": "ORG",
     "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:islam"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:islam:shia:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:islam:shia"
   },
   {
     "source": "gov",
@@ -596,6 +1179,17 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:islam:sunni:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:islam:sunni"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:judaism",
     "label": "JUDAISM",
     "bits": 255,
@@ -603,6 +1197,17 @@
     "color": "#64748b",
     "category": "ORG",
     "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:judaism:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:judaism"
   },
   {
     "source": "gov",
@@ -618,6 +1223,17 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:sikhism:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:RELIGION:sikhism"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:ROBOTICS",
     "label": "ROBOTICS",
     "bits": 255,
@@ -625,6 +1241,17 @@
     "color": "#bf5af2",
     "category": "KNOWLEDGE",
     "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:INDUSTRIES:VERTICALS:ROBOTICS:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:INDUSTRIES:VERTICALS:ROBOTICS"
   },
   {
     "source": "gov",
@@ -651,12 +1278,45 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:MAGIC:DISTRIBUTED:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:MAGIC:DISTRIBUTED"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:MAGIC:GTM",
     "label": "GTM",
     "bits": 255,
     "size": 80,
     "color": "#00ff88",
     "category": "RUNTIME",
+    "inherits": "gov:canonic-canonic:MAGIC"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:MAGIC:GTM:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:MAGIC:GTM"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:MAGIC:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
     "inherits": "gov:canonic-canonic:MAGIC"
   },
   {
@@ -673,6 +1333,17 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:MAGIC:MARKET:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:MAGIC:MARKET"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:MAGIC:ORGS",
     "label": "ORGS",
     "bits": 255,
@@ -680,6 +1351,17 @@
     "color": "#64748b",
     "category": "ORG",
     "inherits": "gov:canonic-canonic:MAGIC"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:MAGIC:ORGS:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:MAGIC:ORGS"
   },
   {
     "source": "gov",
@@ -695,6 +1377,17 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:MAGIC:SALES:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:MAGIC:SALES"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:MAGIC:TOOLCHAIN",
     "label": "TOOLCHAIN",
     "bits": 255,
@@ -706,6 +1399,17 @@
   {
     "source": "gov",
     "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:MAGIC:TOOLCHAIN:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:MAGIC:TOOLCHAIN"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
     "id": "gov:canonic-canonic:MAGIC:VAULT",
     "label": "VAULT",
     "bits": 255,
@@ -713,6 +1417,17 @@
     "color": "#ff9f0a",
     "category": "COMMERCE",
     "inherits": "gov:canonic-canonic:MAGIC"
+  },
+  {
+    "source": "gov",
+    "repo": "canonic-canonic",
+    "id": "gov:canonic-canonic:MAGIC:VAULT:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:canonic-canonic:MAGIC:VAULT"
   },
   {
     "source": "gov",
@@ -790,6 +1505,17 @@
     "color": "#64748b",
     "category": "ORG",
     "inherits": "gov:hadleylab-canonic:DEXTER:DECKS"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER"
   },
   {
     "source": "gov",
@@ -1025,6 +1751,17 @@
   {
     "source": "gov",
     "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:VAULT:DEALS:ATOM-AVINASH:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:VAULT:DEALS:ATOM-AVINASH"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
     "id": "gov:hadleylab-canonic:DEXTER:VAULT:DEALS:MARK-MALEK",
     "label": "MARK-MALEK",
     "bits": 255,
@@ -1032,6 +1769,17 @@
     "color": "#64748b",
     "category": "ORG",
     "inherits": "gov:hadleylab-canonic:DEXTER:VAULT:DEALS"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:DEXTER:VAULT:DEALS:MARK-MALEK:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:DEXTER:VAULT:DEALS:MARK-MALEK"
   },
   {
     "source": "gov",
@@ -1153,6 +1901,17 @@
     "color": "#64748b",
     "category": "ORG",
     "inherits": "gov:hadleylab-canonic:DEXTER:VAULT"
+  },
+  {
+    "source": "gov",
+    "repo": "hadleylab-canonic",
+    "id": "gov:hadleylab-canonic:LEARNING",
+    "label": "LEARNING",
+    "bits": 255,
+    "size": 80,
+    "color": "#64748b",
+    "category": "ORG",
+    "inherits": "gov:hadleylab-canonic:."
   },
   {
     "source": "http",
