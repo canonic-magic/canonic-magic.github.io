@@ -95,19 +95,14 @@ const TALK = {
                 }
             }
 
-            // Placeholder
-            if (canon.placeholder) {
-                [document.getElementById('talkChatInput'),
-                 document.getElementById('talkInput'),
-                 document.getElementById('searchInput')
-                ].forEach(function(inp) { if (inp) inp.placeholder = canon.placeholder; });
-            }
+            this.applyCanonUI(canon);
 
         } catch(e) {
             // UNGOVERNED — refuse to operate with generic prompt
             this.governed = false;
             this.system = null;
             this.scope = 'UNGOVERNED';
+            document.documentElement.setAttribute('data-talk', 'ungoverned');
             var el = document.getElementById('talkMessages');
             if (el) {
                 var div = document.createElement('div');
@@ -118,6 +113,20 @@ const TALK = {
                 el.appendChild(div);
             }
         }
+    },
+
+
+    applyCanonUI(canon) {
+        var scopeText = String(canon.scope || canon.name || 'CANONIC').toUpperCase() + ' TALK';
+        document.querySelectorAll('.talk-scope').forEach(function (el) {
+            el.textContent = scopeText;
+        });
+
+        var placeholder = canon.placeholder || ('Ask ' + String(canon.scope || canon.name || 'CANONIC') + '...');
+        [document.getElementById('talkChatInput'), document.getElementById('talkInput'), document.getElementById('searchInput')]
+            .forEach(function (inp) { if (inp) inp.placeholder = placeholder; });
+
+        document.documentElement.setAttribute('data-talk', 'governed');
     },
 
     // ── Overlay Control ─────────────────────────────────────────────

@@ -3202,3 +3202,21 @@ select {
 /* ═══════════════════════════════════════════════════════════════════
    MAGIC DESIGN | CANONIC FLEET | 2026-02-12
    ═══════════════════════════════════════════════════════════════════ */
+
+
+/* LAYER 2.5 — GOVERNED FLEET NAV POLISH */
+.nav-links a.nav-flagship {
+    color: var(--accent);
+    border: 1px solid rgba(var(--accent-rgb), 0.32);
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+}
+
+#hero,
+section[id],
+.container > div[id],
+.container > section[id] {
+    scroll-margin-top: calc(var(--header-offset) + 18px);
+}

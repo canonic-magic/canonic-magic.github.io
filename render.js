@@ -39,66 +39,91 @@ var RENDER = (function () {
         var b = parseInt(hex.substring(4, 6), 16);
         if (!isNaN(r)) document.documentElement.style.setProperty('--accent-rgb', r + ', ' + g + ', ' + b);
     }
-
-    // ── ECO-BAR ───────────────────────────────────────────
+    // ── ECO-BAR (ROOT AXIOMS) ───────────────────────────
     function renderEcoBar(fleet, currentScope) {
         var bar = document.getElementById('ecoBar');
-        if (!bar || !fleet) return;
+        if (!bar || !fleet || !fleet.sites || !fleet.sites.length) return;
 
         var brand = fleet.brand || { label: 'CANONIC', mark: '\u2229', url: fleet.sites[0].url };
         var html = '<a href="' + brand.url + '" class="eco-brand"><span class="eco-mark">' + brand.mark + '</span> ' + brand.label + '</a>';
         html += '<div class="eco-links">';
         fleet.sites.forEach(function (s) {
             var active = s.scope === currentScope ? ' eco-active' : '';
-            html += '<a href="' + s.url + '" class="' + active + '">' + s.label + '</a>';
+            var label = (s.scope || s.label || '').toUpperCase();
+            html += '<a href="' + s.url + '" class="' + active + '">' + label + '</a>';
         });
         html += '<a href="#" class="eco-talk" onclick="TALK.open();return false"><span class="eco-talk-dot"></span>TALK</a>';
-        // Extra links (e.g. MammoChat)
-        if (fleet.extra) {
-            fleet.extra.forEach(function (e) {
-                html += '<a href="' + e.href + '">' + e.label + '</a>';
-            });
-        }
         html += '<button class="theme-toggle" onclick="toggleTheme()" id="theme-btn" title="Toggle light/dark">\u263E</button>';
         html += '</div>';
         bar.innerHTML = html;
     }
 
-    // ── NAV ──────────────────────────────────────────────
-    function normalizeNav(nav, sections) {
-        if (nav && nav.length) return nav;
-        var items = [];
-        (sections || []).forEach(function (sec) {
-            if (!sec || !sec.id) return;
-            if (items.length >= 4) return;
-            var id = String(sec.id);
-            if (id === 'cta' || id === 'mission' || id === 'axiom-block' || id === 'thesis-lead' || id.indexOf('-lead') !== -1) return;
-            var label = sec.title || id.replace(/[-_]/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
-            items.push({ label: label, href: '#' + id });
-        });
-        return items;
+    // ── NAV (SECONDARY AXIOMS) ──────────────────────────
+    function labelFromId(id) {
+        return String(id || '')
+            .replace(/[-_]/g, ' ')
+            .replace(/\b\w/g, function (c) { return c.toUpperCase(); });
     }
 
-    function renderNav(nav, scopeIcon, scopeName, sections) {
+    function deriveSecondaryNav(contentData, canonData) {
+        var items = [];
+        (contentData.sections || []).forEach(function (sec) {
+            if (!sec || !sec.id || !sec.generated) return;
+            items.push({
+                label: sec.title || labelFromId(sec.id),
+                href: '#' + sec.id,
+                type: 'axiom'
+            });
+        });
+
+        if ((canonData.scope || '').toUpperCase() === 'HADLEYLAB' && contentData.fleet && contentData.fleet.extra) {
+            contentData.fleet.extra.forEach(function (app) {
+                if (!app || !app.label || !app.href) return;
+                items.push({ label: app.label, href: app.href, type: 'flagship' });
+            });
+        }
+
+        if (!items.length && contentData.nav && contentData.nav.length) {
+            return contentData.nav.map(function (n) {
+                return { label: n.label, href: n.href, type: 'section' };
+            });
+        }
+
+        var seen = Object.create(null);
+        return items.filter(function (item) {
+            if (!item || !item.href || seen[item.href]) return false;
+            seen[item.href] = true;
+            return true;
+        }).slice(0, 10);
+    }
+
+    function renderNav(scopeName, scopeIcon, navItems) {
         var el = document.getElementById('nav');
         if (!el) return;
-        var navItems = normalizeNav(nav, sections);
 
         var html = '<div class="nav-inner">';
-        html += '<a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--fg);">';
-        if (scopeIcon) html += '<span style="font-size:32px;color:var(--accent);transform:rotate(90deg);display:inline-block;line-height:1;">' + scopeIcon + '</span>';
-        if (scopeName) html += '<span style="font-size:20px;font-weight:600;letter-spacing:-0.02em;">' + scopeName + '</span>';
-        html += '</a>';
+        html += '<div style="display:flex;align-items:center;gap:10px;">';
+        if (scopeIcon) html += '<span style="font-size:18px;color:var(--accent);line-height:1;">' + scopeIcon + '</span>';
+        html += '<span style="font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--dim);">' +
+            String(scopeName || 'SCOPE').toUpperCase() + ' · AXIOMS</span>';
+        html += '</div>';
 
-        if (navItems && navItems.length) {
-            html += '<ul class="nav-links">';
-            navItems.forEach(function (item) {
-                html += '<li><a href="' + item.href + '">' + item.label + '</a></li>';
-            });
-            html += '</ul>';
-        }
+        html += '<ul class="nav-links">';
+        (navItems || []).forEach(function (item) {
+            var cls = item.type === 'flagship' ? ' class="nav-flagship"' : '';
+            html += '<li><a href="' + item.href + '"' + cls + '>' + item.label + '</a></li>';
+        });
+        html += '</ul>';
+
         html += '</div>';
         el.innerHTML = html;
+    }
+
+    function applyAnchorOffsets() {
+        var targets = document.querySelectorAll('#hero, section[id], .container > div[id], .container > section[id]');
+        targets.forEach(function (node) {
+            node.style.scrollMarginTop = 'calc(var(--header-offset) + 18px)';
+        });
     }
 
     // ── HERO ──────────────────────────────────────────────
@@ -727,12 +752,18 @@ var RENDER = (function () {
 
         // Render from CONTENT.json
         if (content.fleet) renderEcoBar(content.fleet, canon.scope);
-        renderNav(content.nav, canon.navIcon, canon.name, content.sections);
+        var secondaryNav = deriveSecondaryNav(content, canon);
+        renderNav(canon.scope || canon.name, canon.navIcon, secondaryNav);
         if (content.hero) renderHero(content.hero);
         if (content.stats) renderStats(content.stats);
         if (content.sections) renderSections(content.sections);
+        applyAnchorOffsets();
         if (content.cta) renderCTA(content.cta);
         if (content.fleet) renderFooter(content.fleet, content.footer, content.footerTagline);
+        if (window.location.hash) {
+            var t = document.querySelector(window.location.hash);
+            if (t) setTimeout(function () { t.scrollIntoView({ block: 'start' }); }, 0);
+        }
     }
 
     return { init: init, canon: function () { return canon; }, content: function () { return content; } };
